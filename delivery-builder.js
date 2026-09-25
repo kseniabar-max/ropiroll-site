@@ -1,5 +1,6 @@
 import fs from 'node:fs';
 import path from 'node:path';
+import os from 'node:os';
 import AdmZip from 'adm-zip';
 
 if (!fs.existsSync('server-logo.js')) {
@@ -26,5 +27,12 @@ output = output.replace(anchor,
   'app.get("/delivery-map.jpg", (_req,res) => send(res,assets["delivery-map"]));\n' +
   'app.get("/api/hero-food", (_req,res) => send(res,assets["hero-food"]));\n' + anchor);
 
-fs.writeFileSync(path.resolve('server-delivery-live.js'), output);
+const runtimeDir = path.join(os.tmpdir(), 'ropiroll-generated');
+fs.mkdirSync(runtimeDir, { recursive: true });
+fs.writeFileSync(path.join(runtimeDir, 'package.json'), '{"type":"module"}');
+const modulesLink = path.join(runtimeDir, 'node_modules');
+if (!fs.existsSync(modulesLink)) {
+  fs.symlinkSync(path.resolve('node_modules'), modulesLink, 'dir');
+}
+fs.writeFileSync(path.join(runtimeDir, 'server-delivery-live.js'), output);
 console.log('Готова версия сайта с картой и новым оформлением');
