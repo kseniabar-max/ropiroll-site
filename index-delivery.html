@@ -1,0 +1,144 @@
+<!doctype html>
+<html lang="ru">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>РОПИРОЛЛ — пицца и роллы с доставкой</title>
+    <link rel="icon" type="image/jpeg" href="/api/logo?v=31" />
+    <link rel="stylesheet" href="/style.css?v=47" />
+  </head>
+  <body>
+    <header>
+      <div class="brandGroup">
+        <img class="headerLogo" src="/api/logo?v=31" alt="" />
+        <a class="brandLockup" href="/" aria-label="РОПИРОЛЛ — главная">
+          <span class="brandText">РОПИРОЛЛ</span>
+          <span class="brandStroke" aria-hidden="true"></span>
+          <span class="brandSub">ПИЦЦА · РОЛЛЫ</span>
+        </a>
+      </div>
+      <nav>
+        <a href="#menu">Меню</a><a href="#delivery">Доставка</a
+        ><a href="#contacts">Контакты</a>
+      </nav>
+      <button class="cartBtn" type="button" onclick="openCart()" aria-label="Открыть корзину">
+        <svg class="cartIcon" aria-hidden="true" viewBox="0 0 32 32" fill="none"><path d="M5 12h22l-2 15H7L5 12Zm6 0 5-8 5 8" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        <span>Корзина <b id="cartCount">0</b></span>
+      </button>
+    </header>
+    <main>
+      <section class="hero">
+        <div class="heroMedia" aria-hidden="true">
+          <div class="heroPizza"></div>
+          <div class="heroRolls"></div>
+        </div>
+        <div class="heroCopy">
+          <p class="heroScript">Хорошая еда</p>
+          <h1 class="deliveryTitle">
+            <span>Хорошее</span><em>настроение</em>
+          </h1>
+          <span class="heroLine" aria-hidden="true"></span>
+          <p>Пицца и роллы с доставкой. Готовим каждый день с 11:00 до 23:00.</p>
+          <a class="cta" href="#menu">Смотреть меню <span aria-hidden="true">⟶</span></a>
+          <span class="heroLocation">РОПИРОЛЛ · ОСОРГИНО</span>
+        </div>
+        <div class="heroArt" aria-hidden="true"></div>
+      </section>
+      <section id="menu">
+        <div class="sectionHead">
+          <p>ВЫБЕРИТЕ ЛЮБИМОЕ</p>
+          <h2>Что попробуем сегодня?</h2>
+        </div>
+        <div id="filters" class="filters" role="tablist" aria-label="Разделы меню"></div>
+        <div id="products" class="products"></div>
+      </section>
+      <section class="about" aria-labelledby="aboutTitle">
+        <div class="aboutPhoto" aria-hidden="true"></div>
+        <div class="aboutCopy">
+          <p class="eyebrow">О НАС</p>
+          <h2 id="aboutTitle">Готовим для вашего вечера</h2>
+          <p>РопиРолл — пицца, роллы и сеты в деревне Осоргино. Выбирайте любимые блюда, а мы приготовим их к заказу.</p>
+        </div>
+      </section>
+      <section id="delivery" class="delivery">
+        <div class="deliveryIntro">
+          <h2>Доставка по зонам</h2>
+          <p>От магазина в деревне Осоргино, ул. Новая, 2/1. Стоимость считаем по автомобильному маршруту до адреса.</p>
+        </div>
+        <div class="deliveryRates" aria-label="Тарифы доставки">
+          <p><b>До 3 км</b><span>350 ₽</span></p>
+          <p><b>3–6 км</b><span>450 ₽</span></p>
+          <p><b>6–10 км</b><span>600 ₽</span></p>
+        </div>
+        <p class="deliveryFree">При заказе от 2 000 ₽ доставка в пределах 10 км бесплатная.</p>
+      </section>
+      <section class="deliveryZones" aria-labelledby="deliveryZonesTitle">
+        <div class="deliveryZonesHead">
+          <div><p class="eyebrow">ДОСТАВКА ИЗ ОСОРГИНО</p><h2 id="deliveryZonesTitle">Карта зон доставки</h2></div>
+          <p>Стоимость считаем по автомобильному маршруту от магазина до вашего адреса.</p>
+        </div>
+        <a class="deliveryMapLink" href="/delivery-map.jpg" target="_blank" rel="noopener" aria-label="Открыть карту зон доставки крупно">
+          <img src="/delivery-map.jpg" alt="Карта местности с тремя ориентировочными зонами доставки вокруг РопиРолл" loading="lazy" />
+          <span>Открыть карту крупно ↗</span>
+        </a>
+        <p class="deliveryFinePrint">Цветные круги на карте ориентировочные. При заказе от 2 000 ₽ доставка в пределах 10 км бесплатная. Дальше 10 км стоимость согласуется с администратором.</p>
+      </section>
+      <section id="contacts" class="contacts">
+        <div class="contactsInfo">
+          <h2>Контакты РопиРолл</h2>
+          <dl>
+            <div><dt>Телефон</dt><dd><a href="tel:+79649566664">+7 (964) 956-66-64</a></dd></div>
+            <div><dt>Адрес</dt><dd>Деревня Осоргино,<br />ул. Новая, 2/1</dd></div>
+            <div><dt>Время работы</dt><dd>Ежедневно 11:00–23:00</dd></div>
+          </dl>
+          <a class="contactDirections" href="https://yandex.ru/maps/?text=%D0%A0%D0%B5%D1%81%D0%BF%D1%83%D0%B1%D0%BB%D0%B8%D0%BA%D0%B0%20%D0%91%D0%B0%D1%88%D0%BA%D0%BE%D1%80%D1%82%D0%BE%D1%81%D1%82%D0%B0%D0%BD%2C%20%D0%B4%D0%B5%D1%80%D0%B5%D0%B2%D0%BD%D1%8F%20%D0%9E%D1%81%D0%BE%D1%80%D0%B3%D0%B8%D0%BD%D0%BE%2C%20%D1%83%D0%BB%D0%B8%D1%86%D0%B0%20%D0%9D%D0%BE%D0%B2%D0%B0%D1%8F%2C%202%2F1" target="_blank" rel="noopener">Посмотреть маршрут ↗</a>
+        </div>
+        <div class="contactsMap">
+          <iframe loading="lazy" title="Карта деревни Осоргино рядом с РопиРолл" src="https://www.openstreetmap.org/export/embed.html?bbox=55.749%2C54.547%2C55.769%2C54.559&amp;layer=mapnik"></iframe>
+          <span>Карта района Осоргино · <a href="https://www.openstreetmap.org/copyright" target="_blank" rel="noopener">© OpenStreetMap</a></span>
+        </div>
+      </section>
+    </main>
+    <div id="dishShade" class="dishShade" onclick="closeDish()"></div>
+    <section id="dishModal" class="dishModal" role="dialog" aria-modal="true" aria-labelledby="dishHeading" aria-label="Информация о блюде">
+      <button type="button" class="dishClose" onclick="closeDish()" aria-label="Закрыть карточку">×</button>
+      <div id="dishContent"></div>
+    </section>
+    <div id="cart" class="drawer">
+      <div class="drawerTop">
+        <h2>Ваш заказ</h2>
+        <button onclick="closeCart()">×</button>
+      </div>
+      <div id="cartItems"></div>
+      <div class="total">Итого: <b id="total">0 ₽</b></div>
+      <button class="checkout" onclick="showCheckout()">
+        Оформить доставку
+      </button>
+    </div>
+    <div id="shade" class="shade" onclick="closeCart()"></div>
+    <div id="checkout" class="modal">
+      <button class="x" onclick="hideCheckout()">×</button>
+      <h2>Оформление заказа</h2>
+      <form id="orderForm">
+        <input name="name" placeholder="Ваше имя" required /><input
+          name="phone"
+          type="tel"
+          placeholder="Телефон"
+          required
+        /><input name="address" placeholder="Адрес доставки" required /><input
+          name="details"
+          placeholder="Квартира, домофон, этаж"
+        /><select name="payment">
+          <option>Наличными при получении</option>
+          <option>Картой при получении</option></select
+        ><textarea name="comment" placeholder="Комментарий к заказу"></textarea>
+        <div class="notice">
+          Доставка от 350 ₽. Бесплатно от 2 000 ₽ в пределах 10 км. Итоговую стоимость сообщим после проверки адреса.
+        </div>
+        <button type="submit" class="checkout">Отправить заказ</button>
+        <p id="formMsg"></p>
+      </form>
+    </div>
+    <script src="/app.js?v=47"></script>
+  </body>
+</html>
