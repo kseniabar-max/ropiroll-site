@@ -13,7 +13,7 @@ if (!found) throw new Error('Не удалось найти файлы сайт�
 
 const assets = JSON.parse(found[1]);
 const delivery = JSON.parse(fs.readFileSync('delivery-assets.json', 'utf8'));
-assets.index.b64 = delivery.index;
+assets.index.b64 = fs.readFileSync('index-delivery.html').toString('base64');
 assets.css.b64 = delivery.css;
 assets['delivery-map'] = { type: 'image/jpeg', b64: delivery.map };
 assets['hero-food'] = { type: 'image/jpeg', b64: delivery.hero };
