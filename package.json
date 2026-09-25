@@ -4,7 +4,7 @@
   "private": true,
   "type": "module",
   "scripts": {
-    "start": "node -e \"const fs=require('fs');const AdmZip=require('adm-zip');if(!fs.existsSync('server-logo.js'))new AdmZip('server-logo.zip').extractAllTo('.',true);import('./server-logo.js')\""
+    "start": "node delivery-loader.js"
   },
   "engines": {
     "node": ">=20"
