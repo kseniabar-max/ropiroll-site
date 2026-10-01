@@ -147,3 +147,8 @@ textarea {
 .categoryIllustration3{background-position:0% 100%}
 .categoryIllustration4{background-position:50% 100%}
 .categoryIllustration5{background-position:100% 100%}
+
+/* Keep the food scene wider, especially on narrow screens. */
+.hero{background-color:#030708;background-size:auto,100% auto;background-position:center,center bottom}
+@media(max-width:850px){.hero{background-size:auto,125% auto;background-position:center,right bottom}}
+@media(max-width:520px){.hero{height:510px;min-height:510px;background:linear-gradient(180deg,#030708 0%,#030708 55%,transparent 78%),url('/api/hero-food?v=60') right bottom/150% auto no-repeat;background-color:#030708}.heroCopy{position:relative;z-index:1}}
