@@ -14,9 +14,12 @@ if (!found) throw new Error('Не удалось найти файлы сайт�
 const assets = JSON.parse(found[1]);
 const delivery = JSON.parse(fs.readFileSync('delivery-assets.json', 'utf8'));
 assets.index.b64 = fs.readFileSync('index-delivery.html').toString('base64');
-assets.css.b64 = delivery.css;
+assets.css.b64 = fs.readFileSync('css-delivery.css').toString('base64');
+assets.js.b64 = fs.readFileSync('app-redesign.js').toString('base64');
+assets.home = {type:'application/javascript; charset=utf-8', b64:fs.readFileSync('home.js').toString('base64')};
+assets['category-images'] = {type:'image/webp', b64:fs.readFileSync('category-images-v61.webp').toString('base64')};
 assets['delivery-map'] = { type: 'image/jpeg', b64: delivery.map };
-assets['hero-food'] = { type: 'image/jpeg', b64: delivery.hero };
+assets['hero-food'] = { type: 'image/webp', b64: fs.readFileSync('hero-v60.webp').toString('base64') };
 
 let output = source.slice(0, found.index) +
   'const assets = ' + JSON.stringify(assets) +
@@ -24,6 +27,8 @@ let output = source.slice(0, found.index) +
 const anchor = 'app.get("/api/logo",';
 if (!output.includes(anchor)) throw new Error('Не удалось добавить изображения');
 output = output.replace(anchor,
+  'app.get("/api/category-images", (_req,res) => send(res,assets["category-images"]));\n' +
+  'app.get("/home.js", (_req,res) => send(res,assets.home,"no-cache"));\n' +
   'app.get("/delivery-map.jpg", (_req,res) => send(res,assets["delivery-map"]));\n' +
   'app.get("/api/hero-food", (_req,res) => send(res,assets["hero-food"]));\n' + anchor);
 
