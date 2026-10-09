@@ -152,3 +152,13 @@ textarea {
 .hero{background-color:#030708;background-size:auto,100% auto;background-position:center,center bottom}
 @media(max-width:850px){.hero{background-size:auto,125% auto;background-position:center,right bottom}}
 @media(max-width:520px){.hero{height:510px;min-height:510px;background:linear-gradient(180deg,#030708 0%,#030708 55%,transparent 78%),url('/api/hero-food?v=60') right bottom/150% auto no-repeat;background-color:#030708}.heroCopy{position:relative;z-index:1}}
+
+/* Telephone-only electronic catalogue */
+.phoneOrder{display:inline-flex;align-items:center;justify-content:center;background:var(--orange,#ff7a00);color:#111;padding:12px 18px;border-radius:8px;font-weight:700;text-decoration:none;font-size:14px;line-height:1.4;text-align:center}
+.phoneOrder:focus-visible{outline:3px solid white;outline-offset:3px}
+.headerPhone{flex-shrink:0}
+.catalogNotice{text-align:center;padding:14px 18px;background:#202020;color:#fff;font-size:16px;line-height:1.5}
+.catalogNotice a{color:#ff9a3c;white-space:nowrap;font-weight:700}
+.dishActions .phoneOrder{max-width:240px}
+@media(max-width:600px){.headerPhone{font-size:14px;padding:9px 10px;max-width:145px}.catalogNotice{padding:12px 16px}.dishActions{flex-wrap:wrap;gap:14px}.dishActions .phoneOrder{max-width:100%}}
+@media(max-width:380px){header{flex-wrap:wrap;justify-content:center}.headerPhone{max-width:none;width:100%;min-height:44px}html{scroll-padding-top:140px}}
