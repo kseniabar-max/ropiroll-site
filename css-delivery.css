@@ -409,3 +409,6 @@ body.approved-site{background:#20201c;color:#f7f1e8;font-family:Arial,sans-serif
 .approved-site .approved-footer-brand img{width:70px;height:70px}
 .approved-site .approved-footer-brand h3{font-size:25px}
 }
+
+/* Clip the square logo image precisely to its circular emblem. */
+.approved-site .brand-logo-img,.approved-site .approved-footer-brand img{border-radius:50%!important;clip-path:circle(49% at 50% 50%);overflow:hidden;object-fit:cover;background:transparent}
