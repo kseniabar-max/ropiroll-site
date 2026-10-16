@@ -236,3 +236,105 @@ footer{border-top:1px solid #ffffff24}.footerMain .headerLogo{width:53px;height:
  .footerMain .brandText{font-size:18px}
 }
 @media(max-width:380px){header{flex-wrap:nowrap}.headerPhone{width:auto;max-width:125px}.brandText{font-size:17px}.headerLogo{width:43px;height:43px}}
+
+
+/* Approved user-provided RopiRoll page, matching corrected-preview layout. */
+body.approved-site{background:#20201c;color:#f7f1e8;font-family:Arial,sans-serif}
+.approved-site h1,.approved-site h2,.approved-site h3,.approved-category strong{font-family:Georgia,serif;font-weight:400;letter-spacing:-.025em}
+.approved-site .top{height:82px;position:absolute;top:0;left:0;right:0;z-index:25;display:flex;align-items:center;justify-content:space-between;gap:22px;padding:0 clamp(20px,5vw,78px);background:transparent;border:0}
+.approved-site .brand-logo{display:inline-flex;align-items:center;gap:12px;flex-shrink:0;white-space:nowrap}
+.approved-site .brand-logo-img{width:70px;height:70px;object-fit:contain;border-radius:0}
+.approved-site .brand-site-name{font-size:clamp(19px,2vw,28px);font-family:Arial,sans-serif;font-weight:900;letter-spacing:-.05em;color:#fff}
+.approved-site .site-nav{display:flex;gap:27px;font-size:13px;text-transform:none;font-weight:400}
+.approved-site .site-nav a:hover{color:#c5a184}
+.approved-site .header-call,.approved-site .approved-btn{display:inline-flex;align-items:center;justify-content:center;gap:15px;background:#b99780;color:#fff;border:0;border-radius:40px;min-height:44px;padding:14px 25px;font-size:13px;font-weight:700;white-space:nowrap}
+.approved-site .approved-btn:hover,.approved-site .header-call:hover{background:#f4772e}
+.approved-site .menu-toggle{display:none;color:#fff;background:#0004;border:1px solid #ffffff78;border-radius:50%;width:44px;height:44px;font-size:22px}
+.approved-site .mobile-nav{display:none}
+.approved-site .approved-hero{height:min(50vw,680px);min-height:530px;position:relative;display:flex;align-items:center;justify-content:flex-end;background:linear-gradient(90deg,#0009 0%,#0001 48%,#000b 100%),url('/api/hero-food?v=60') center 48%/cover no-repeat}
+.approved-site .approved-hero:after{content:'';position:absolute;inset:0;background:linear-gradient(0deg,#0007,transparent 30%);pointer-events:none}
+.approved-site .approved-hero-content{position:relative;z-index:1;width:35%;max-width:450px;margin-right:8%;padding-top:65px}
+.approved-site .eyebrow{font:10px/1.5 Arial,sans-serif;letter-spacing:2.6px;text-transform:uppercase;color:#c7b8a9}
+.approved-site .approved-hero h1{font-size:clamp(42px,4vw,65px);line-height:1.06;margin:17px 0 24px}
+.approved-site .approved-hero h1 i,.approved-site .approved-story h2 i{color:#b99780;font-weight:400}
+.approved-site .approved-hero p{max-width:330px;font-size:14px;color:#eee5dd;line-height:1.8;margin:0 0 27px}
+.approved-site .approved-categories{background:#24241f;padding:80px 5vw 75px}
+.approved-site .approved-title{text-align:center;max-width:650px;margin:0 auto 40px}
+.approved-site .approved-title h2{font-size:clamp(31px,3.2vw,46px);margin:12px 0}
+.approved-site .approved-title p{font-size:13px;color:#c9c2b7;line-height:1.8}
+.approved-site .approved-category-grid{max-width:1260px;margin:auto;display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:20px}
+.approved-site .approved-category{text-align:center;display:flex;align-items:center;flex-direction:column}
+.approved-site .round-food{display:block;width:min(16vw,210px);height:min(16vw,210px);border-radius:50%;background-image:url('/api/category-images?v=61');background-size:300% 200%;background-repeat:no-repeat;box-shadow:0 4px 35px #0004}
+.approved-site .round-rolls{background-position:50% 0}.approved-site .round-pizza{background-position:0 0}.approved-site .round-sets{background-position:100% 0}.approved-site .round-salads{background-position:0 100%}.approved-site .round-fried{background-position:50% 100%}
+.approved-site .approved-category strong{font-size:23px;margin:18px 0 3px}.approved-site .approved-category small{font-size:11px;color:#aaa29a}
+.approved-site .approved-center{text-align:center;margin-top:47px}
+.approved-site .approved-features{min-height:540px;background:#181714;display:grid;grid-template-columns:1.05fr 1fr}
+.approved-site .approved-features-photo{min-height:540px;background:url('/api/hero-desktop') center/cover no-repeat}
+.approved-site .approved-feature-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr))}
+.approved-site .approved-feature{padding:clamp(23px,3.5vw,55px);border:1px solid #ffffff2e;display:flex;flex-direction:column;justify-content:center}
+.approved-site .adv-icon{font-size:30px;color:#b98b70;line-height:1;margin-bottom:14px}
+.approved-site .approved-feature h3{font-size:clamp(23px,2vw,34px);line-height:1.15;margin:0 0 13px}
+.approved-site .approved-feature p{color:#b9b0a7;font-size:12px;line-height:1.8;margin:0}
+.approved-site .approved-story{max-width:1400px;margin:auto;padding:110px 6vw;display:grid;grid-template-columns:.9fr 1.1fr;align-items:center;gap:6vw}
+.approved-site .approved-story h2{font-size:clamp(42px,4.1vw,65px);line-height:1.12;margin:18px 0 28px}
+.approved-site .approved-story p{max-width:490px;font-size:13px;line-height:2;color:#c9c2b7;margin:0 0 28px}
+.approved-site .approved-story-images{height:430px;position:relative}
+.approved-site .approved-story-images img{position:absolute;right:0;top:0;width:83%;height:385px;object-fit:cover}
+.approved-site .approved-story-images img+img{left:0;right:auto;top:175px;width:49%;height:225px;border:10px solid #20201c}
+.approved-site .approved-catalog{background:#211f1b;padding:75px 5vw 95px;scroll-margin-top:20px}
+.approved-site .approved-catalog-inner{max-width:1250px;margin:auto}
+.approved-site .approved-catalog-head{margin-bottom:30px}.approved-site .approved-catalog-head h2{font-size:clamp(35px,3.5vw,53px);margin:8px 0}
+.approved-site .approved-catalog-head p{color:#c9c2b7;font-size:13px}
+.approved-site .filters button{background:#2e2923;border:1px solid #ffffff28;color:#eee8df}
+.approved-site .filters button.active{background:#b99780;border-color:#b99780;color:#151310}
+.approved-site .products{background:transparent;padding:0;grid-template-columns:repeat(4,minmax(0,1fr));gap:20px}
+.approved-site .product{background:#292722;border:1px solid #ffffff12;border-radius:9px}
+.approved-site .price{color:#d7b49d}.approved-site .add{background:#b99780;color:#fff}
+.approved-site .approved-footer{border-top:1px solid #ffffff26;padding:70px 6vw 30px;display:grid;grid-template-columns:1.1fr 1fr 1fr;gap:30px}
+.approved-site .approved-footer h3{font:400 22px Georgia,serif;margin:0 0 15px}
+.approved-site .approved-footer p{color:#c9c2b7;font-size:13px;line-height:2}
+.approved-site .approved-footer small{grid-column:1/-1;border-top:1px solid #ffffff28;padding-top:25px;color:#989188;font-size:11px}
+.approved-site .approved-sticky{display:none}
+@media(max-width:900px){.approved-site .site-nav{display:none}.approved-site .menu-toggle{display:block}.approved-site .header-call{margin-left:auto}.approved-site .approved-hero-content{width:42%}}
+@media(max-width:760px){
+.approved-site .top{height:64px;min-height:64px;padding:0 16px;background:#11110f;gap:8px}
+.approved-site .brand-logo{gap:7px;min-width:0}.approved-site .brand-logo-img{width:51px;height:53px}
+.approved-site .brand-site-name{font-size:clamp(16px,4.4vw,21px)}
+.approved-site .header-call{display:none}
+.approved-site .menu-toggle{display:block;flex:0 0 44px}
+.approved-site .mobile-nav.open{display:flex;position:fixed;inset:0;z-index:100;background:#171613;flex-direction:column;align-items:center;justify-content:center;gap:27px;font:28px Georgia,serif}
+.approved-site .mobile-nav button{position:absolute;right:20px;top:20px;border:0;background:none;font-size:36px;color:#fff}
+.approved-site .approved-hero{height:calc(100svh - 120px);min-height:660px;max-height:800px;display:flex;align-items:flex-end;justify-content:flex-start;background:linear-gradient(180deg,#0000 5%,#11110f33 28%,#11110f 72%),url('/api/hero-food?v=60') center top/100% auto no-repeat;background-color:#11110f}
+.approved-site .approved-hero-content{width:100%;max-width:none;margin:0;padding:0 24px 117px}
+.approved-site .approved-hero h1{font-size:clamp(39px,9vw,53px);line-height:1.07;margin:12px 0 14px}
+.approved-site .approved-hero p{font-size:13px;line-height:1.55;margin:0 0 20px}
+.approved-site .eyebrow{font-size:9px;letter-spacing:2px}
+.approved-site .approved-categories{padding:54px 13px 64px}
+.approved-site .approved-title{max-width:350px;margin-bottom:27px}
+.approved-site .approved-title h2{font-size:35px}
+.approved-site .approved-title p{font-size:12px}
+.approved-site .approved-category-grid{grid-template-columns:repeat(3,minmax(0,1fr));gap:22px 8px}
+.approved-site .round-food{width:min(27vw,130px);height:min(27vw,130px)}
+.approved-site .approved-category strong{font-size:19px;margin:11px 0 4px}
+.approved-site .approved-category small{display:none}
+.approved-site .approved-center{margin-top:32px}
+.approved-site .approved-features{display:block}
+.approved-site .approved-features-photo{min-height:260px}
+.approved-site .approved-feature{min-height:195px;padding:17px 14px}
+.approved-site .approved-feature h3{font-size:clamp(19px,4.7vw,25px)}
+.approved-site .approved-feature p{font-size:11px;line-height:1.55}
+.approved-site .approved-story{display:flex;flex-direction:column;padding:65px 22px;gap:25px}
+.approved-site .approved-story h2{font-size:40px}
+.approved-site .approved-story p{line-height:1.7}
+.approved-site .approved-story-images{width:100%;height:335px}
+.approved-site .approved-story-images img{height:300px}
+.approved-site .approved-story-images img+img{height:160px;top:155px}
+.approved-site .approved-catalog{padding:60px 18px 95px}
+.approved-site .approved-catalog-head h2{font-size:38px}
+.approved-site .products{grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}
+.approved-site .approved-footer{grid-template-columns:1fr 1fr;padding:55px 22px 105px;gap:24px}
+.approved-site .approved-footer>div:first-child{grid-column:1/-1}
+.approved-site .approved-sticky{display:flex;position:fixed;bottom:0;left:0;right:0;z-index:50;background:linear-gradient(180deg,#1b1a17,#131210);padding:10px 12px max(10px,env(safe-area-inset-bottom));gap:9px;box-shadow:0 -8px 30px #0009}
+.approved-site .approved-sticky a{flex:1;text-align:center;border:1px solid #b9978066;border-radius:28px;padding:13px 8px;font-size:13px;font-weight:700;white-space:nowrap}
+.approved-site .approved-sticky a:last-child{background:#f4772e;border-color:#f4772e}
+}
