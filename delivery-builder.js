@@ -38,6 +38,15 @@ if (ordersStart < 0 || ordersEnd < 0) throw new Error('Не удалось от�
 output = output.slice(0, ordersStart) +
   'app.all("/api/order", (_req,res) => res.status(405).json({error:"Заказы принимаются только по телефону",phone:"+79632375357"}));\n' +
   output.slice(ordersEnd);
+// Diagnostics: identify the exact version served on the real domain.
+const diagnosticAnchor = 'app.use((_req,res)=>send(res,assets.index';
+const diagnosticPosition = output.indexOf(diagnosticAnchor);
+if (diagnosticPosition < 0) throw new Error('Не удалось найти обработчик главной страницы');
+output = output.slice(0, diagnosticPosition) +
+  'app.get("/api/site-version", (_req,res) => res.set("Cache-Control","no-store").json({version:"ropi-editorial-20261017",phone:"+79632375357",hero:"Ощути вкус"}));\\n'.replace('\\n','\n') +
+  'app.get("/", (_req,res) => { res.set("Cache-Control","no-store, max-age=0"); return send(res,assets.index,"no-cache"); });\\n'.replace('\\n','\n') +
+  output.slice(diagnosticPosition);
+
 output = output.replace('import crypto from "node:crypto";\n', '')
   .replace('import pg from "pg";\n', '')
   .replace('import nodemailer from "nodemailer";\n', '');
