@@ -37,7 +37,7 @@ const ordersStart = output.indexOf('let pool;');
 const ordersEnd = output.indexOf('app.use((_req,res)=>send(res,assets.index', ordersStart);
 if (ordersStart < 0 || ordersEnd < 0) throw new Error('Не удалось отключить онлайн-заказы');
 output = output.slice(0, ordersStart) +
-  'app.all("/api/order", (_req,res) => res.status(405).json({error:"Заказы принимаются только по телефону",phone:"+79641695122"}));\n' +
+  'app.all("/api/order", (_req,res) => res.status(405).json({error:"Заказы принимаются только по телефону",phone:"+79632375357"}));\n' +
   output.slice(ordersEnd);
 output = output.replace('import crypto from "node:crypto";\n', '')
   .replace('import pg from "pg";\n', '')
