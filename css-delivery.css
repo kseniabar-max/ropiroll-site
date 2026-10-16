@@ -396,3 +396,16 @@ body.approved-site{background:#20201c;color:#f7f1e8;font-family:Arial,sans-serif
 @media(max-width:760px){
 .approved-site .approved-hero{min-height:565px!important;height:70svh!important;max-height:690px!important;background-size:100% 100%,100% auto!important;background-position:center center,center top!important;background-repeat:no-repeat!important;background-color:#11110f!important;}
 }
+
+/* Original approved story images and complete footer brand. */
+.approved-site .approved-story-images .story-photo-main{position:absolute;right:0;top:0;width:83%;height:385px;object-fit:cover}
+.approved-site .approved-story-images .story-photo-inset{position:absolute;left:0;right:auto;top:175px;width:49%;height:225px;object-fit:cover;border:10px solid #20201c}
+.approved-site .approved-footer-brand{display:flex;align-items:center;gap:14px;margin-bottom:12px}
+.approved-site .approved-footer-brand img{width:76px;height:76px;object-fit:contain;flex:none}
+.approved-site .approved-footer-brand h3{margin:0;font:700 25px Arial,sans-serif;letter-spacing:-.04em;color:#fff}
+@media(max-width:760px){
+.approved-site .approved-story-images .story-photo-main{height:300px}
+.approved-site .approved-story-images .story-photo-inset{top:155px;height:160px}
+.approved-site .approved-footer-brand img{width:70px;height:70px}
+.approved-site .approved-footer-brand h3{font-size:25px}
+}
