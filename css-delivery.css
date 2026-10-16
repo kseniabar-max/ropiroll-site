@@ -338,3 +338,19 @@ body.approved-site{background:#20201c;color:#f7f1e8;font-family:Arial,sans-serif
 .approved-site .approved-sticky a{flex:1;text-align:center;border:1px solid #b9978066;border-radius:28px;padding:13px 8px;font-size:13px;font-weight:700;white-space:nowrap}
 .approved-site .approved-sticky a:last-child{background:#f4772e;border-color:#f4772e}
 }
+
+
+/* Final mobile hero and editorial imagery correction. */
+.approved-site .approved-story-shot{position:absolute;right:0;top:0;width:83%;height:385px;background-size:300% 200%;background-repeat:no-repeat;background-image:url('/api/category-images?v=61')}
+.approved-site .approved-story-pizza{background-position:0% 0%}
+.approved-site .approved-story-rolls{left:0;right:auto;top:175px;width:49%;height:225px;border:10px solid #20201c;background-position:50% 0%}
+.approved-site .approved-features-photo{background-image:url('/api/hero-food?v=60');background-position:center;background-size:cover}
+@media(max-width:760px){
+.approved-site .approved-hero{height:auto;min-height:0;max-height:none;display:flex;flex-direction:column;justify-content:flex-start;align-items:stretch;padding:0;background:#11110f}
+.approved-site .approved-hero::before{content:'';display:block;width:100%;height:auto;aspect-ratio:1.53/1;background-image:url('/api/hero-food?v=60');background-position:center center;background-size:contain;background-repeat:no-repeat}
+.approved-site .approved-hero::after{display:none}
+.approved-site .approved-hero-content{width:100%;max-width:none;margin:0;padding:22px 24px 52px;background:#11110f}
+.approved-site .approved-hero h1{margin:12px 0 14px}
+.approved-site .approved-story-shot{height:300px}
+.approved-site .approved-story-rolls{height:160px;top:155px}
+}
