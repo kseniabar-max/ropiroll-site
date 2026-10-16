@@ -354,3 +354,6 @@ body.approved-site{background:#20201c;color:#f7f1e8;font-family:Arial,sans-serif
 .approved-site .approved-story-shot{height:300px}
 .approved-site .approved-story-rolls{height:160px;top:155px}
 }
+
+/* Approved homepage: the complete catalog is shown only after a menu action. */
+.approved-site .approved-catalog[hidden]{display:none!important}
