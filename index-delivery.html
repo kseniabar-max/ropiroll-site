@@ -18,9 +18,20 @@
 <div class="approved-feature"><span class="adv-icon">◷</span><h3>11:00–23:00</h3><p>Принимаем заказы ежедневно по телефону.</p></div>
 </div></section>
 <section id="about" class="approved-story"><div><span class="eyebrow">О НАС</span><h2>Наша история —<br>это любовь к еде<br><i>и к вам.</i></h2><p>РопиРолл — место, где вкус объединяет людей. Мы с заботой готовим роллы и пиццу, выбираем свежие ингредиенты и любим, когда вы возвращаетесь за любимым вкусом.</p><a class="approved-btn" href="tel:+79632375357">Заказать по телефону →</a></div><div class="approved-story-images"><div class="approved-story-shot approved-story-pizza" role="img" aria-label="Пицца РопиРолл"></div><div class="approved-story-shot approved-story-rolls" role="img" aria-label="Роллы РопиРолл"></div></div></section>
-<section id="menu" class="approved-catalog"><div class="approved-catalog-inner"><div class="approved-catalog-head"><span class="eyebrow">ЭЛЕКТРОННОЕ МЕНЮ</span><h2>Наши блюда</h2><p>Выберите любимое блюдо и позвоните для заказа.</p></div><div id="filters" class="filters" role="tablist" aria-label="Разделы меню"></div><div id="products" class="products"></div></div></section>
+<section id="menu" class="approved-catalog" hidden aria-label="Полное меню"><div class="approved-catalog-inner"><div class="approved-catalog-head"><span class="eyebrow">ЭЛЕКТРОННОЕ МЕНЮ</span><h2>Наши блюда</h2><p>Выберите любимое блюдо и позвоните для заказа.</p></div><div id="filters" class="filters" role="tablist" aria-label="Разделы меню"></div><div id="products" class="products"></div></div></section>
 </main>
 <footer id="contacts" class="approved-footer"><div><h3>РОПИРОЛЛ</h3><p>Роллы и пицца, которые хочется разделить с близкими.</p></div><div><h3>Мы рядом</h3><p>д. Осоргино, ул. Новая, 2/1<br>Ежедневно, 11:00–23:00</p></div><div><h3>Заказать по телефону</h3><p><a href="tel:+79632375357">+7 (963) 237-53-57</a><br>Выберите блюда и позвоните нам.</p></div><small>© 2026 РопиРолл · Доставка роллов и пиццы</small></footer>
 <div class="approved-sticky"><a href="#menu">Смотреть меню</a><a href="tel:+79632375357">☎ Позвонить</a></div>
 <div id="dishShade" class="dishShade" onclick="closeDish()"></div><section id="dishModal" class="dishModal" role="dialog" aria-modal="true" aria-labelledby="dishHeading"><button type="button" class="dishClose" onclick="closeDish()" aria-label="Закрыть">×</button><div id="dishContent"></div></section>
-<script src="/app.js?v=81"></script><script>document.querySelectorAll('.mobile-nav a').forEach(a=>a.addEventListener('click',()=>document.getElementById('mobileNav').classList.remove('open')))</script></body></html>
+<script src="/app.js?v=82"></script><script>
+(function(){
+ const section=document.getElementById('menu');
+ document.querySelectorAll('a[href="#menu"]').forEach(link=>link.addEventListener('click',function(event){
+   event.preventDefault();
+   section.hidden=false;
+   requestAnimationFrame(()=>section.scrollIntoView({behavior:'smooth',block:'start'}));
+ }));
+ // The catalogue is not a homepage section; reveal only on deliberate menu selection.
+ if(location.hash==='#menu'){section.hidden=false;}
+})();
+</script><script>document.querySelectorAll('.mobile-nav a').forEach(a=>a.addEventListener('click',()=>document.getElementById('mobileNav').classList.remove('open')))</script></body></html>
