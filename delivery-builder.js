@@ -1,6 +1,5 @@
 import fs from 'node:fs';
 import path from 'node:path';
-import os from 'node:os';
 import AdmZip from 'adm-zip';
 
 if (!fs.existsSync('server-logo.js')) {
@@ -43,7 +42,7 @@ output = output.replace('import crypto from "node:crypto";\n', '')
   .replace('import pg from "pg";\n', '')
   .replace('import nodemailer from "nodemailer";\n', '');
 
-const runtimeDir = path.join(os.tmpdir(), 'ropiroll-generated');
+const runtimeDir = path.resolve('generated-site');
 fs.mkdirSync(runtimeDir, { recursive: true });
 fs.writeFileSync(path.join(runtimeDir, 'package.json'), '{"type":"module"}');
 const modulesLink = path.join(runtimeDir, 'node_modules');
