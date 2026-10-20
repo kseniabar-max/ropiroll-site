@@ -7,7 +7,7 @@ const newFriedDishes=[
 {id:97,name:"Стрипсы 420 г",cat:"Фритюр",pic:"🍗",price:750,weight:"420 г",ingredients:""},
 {id:98,name:"Наггетсы 420 г",cat:"Фритюр",pic:"🍗",price:700,weight:"420 г",ingredients:""}
 ];
-const hawaiianPizza={id:99,name:"Пицца Гавайская",cat:"Пицца",pic:"🍕",price:410,weight:"25 / 40 см",prices:{"25 см":410,"40 см":640},ingredients:"Сыр, ветчина, мясо птицы, ананасы"};
+const hawaiianPizza={id:99,name:"Пицца Гавайская",cat:"Пицца",pic:"🍕",price:640,weight:"33 см",ingredients:"Сыр, ветчина, мясо птицы, ананасы"};
 const friedInsertion=menu.findIndex(p=>p.name==="Соус фирменный"&&p.cat==="Фритюр");
 const pizzaInsertion=menu.findIndex(p=>p.cat==="Сеты");
 if(friedInsertion<0||pizzaInsertion<0)throw new Error("Категории каталога не найдены");
