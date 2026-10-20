@@ -19,6 +19,8 @@ assets.home = {type:'application/javascript; charset=utf-8', b64:fs.readFileSync
 assets['category-images'] = {type:'image/webp', b64:fs.readFileSync('category-images-v61.webp').toString('base64')};
 assets['delivery-map'] = { type: 'image/jpeg', b64: delivery.map };
 assets['hero-food'] = { type: 'image/webp', b64: fs.readFileSync('hero-v60.webp').toString('base64') };
+assets['rr-food'] = {type:'image/webp',b64:fs.readFileSync('assets/rr-food.webp').toString('base64')};
+assets['rr-mascot'] = {type:'image/webp',b64:fs.readFileSync('assets/rr-mascot.webp').toString('base64')};
 assets['menu-v42-sprite'] = {type:'image/webp', b64:fs.readFileSync('menu-v42-sprite.webp').toString('base64')};
 for (const key of ['shrimp','strips','calamari','onion','sprite']) {
   assets['fried-'+key] = {type:'image/webp', b64:fs.readFileSync('fried-assets/'+key+'.webp').toString('base64')};
@@ -34,6 +36,8 @@ output = output.replace(anchor,
   'app.get("/home.js", (_req,res) => send(res,assets.home,"no-cache"));\n' +
   'app.get("/delivery-map.jpg", (_req,res) => send(res,assets["delivery-map"]));\n' +
   'app.get("/api/hero-food", (_req,res) => send(res,assets["hero-food"]));\n' +
+  'app.get("/api/rr-food.webp", (_req,res) => send(res,assets["rr-food"],"no-cache"));\n' +
+  'app.get("/api/rr-mascot.webp", (_req,res) => send(res,assets["rr-mascot"],"no-cache"));\n' +
   'app.get("/api/menu-v42-sprite.webp", (_req,res) => send(res,assets["menu-v42-sprite"],"no-cache"));\n' +
   'app.get("/api/fried-photo/:key", (req,res) => { const key = String(req.params.key||""); if(!["shrimp","strips","calamari","onion","sprite"].includes(key)) return res.status(404).end(); return send(res,assets["fried-"+key],"no-cache"); });\n' + anchor);
 

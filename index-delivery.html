@@ -7,7 +7,7 @@
 <title>РопиРолл — роллы и пицца с доставкой в Осоргино</title>
 <meta name="description" content="РопиРолл — электронное меню роллов, пиццы, сетов и закусок. Деревня Осоргино, улица Новая, 2/1. Заказы по телефону +7 (963) 237-53-57. Ежедневно с 11:00 до 23:00.">
 <link rel="icon" href="/api/logo?v=31">
-<link rel="stylesheet" href="/style.css?v=20261020friedphotos1">
+<link rel="stylesheet" href="/style.css?v=20261020reference">
 <style>
 :root{--rp-orange:#fc501d;--rp-cream:#fffaf6;--rp-ink:#201914;--rp-gray:#756e68}
 html{scroll-behavior:smooth}
@@ -33,6 +33,30 @@ html{scroll-behavior:smooth}
 .approved-site .dishModal{background:#fffaf6!important;color:#251e18!important}.approved-site .dishInfo,.approved-site .dishInfo h2,.approved-site .dishInfo h3{color:#251e18!important}.approved-site .dishInfo p,.approved-site .dishInfo small{color:#6d625b!important}.approved-site .dishClose{color:#271f19!important}.approved-site .phoneOrder{background:var(--rp-orange)!important;color:white!important}.approved-site .dishShade{background:#0009}.approved-site .pizza-modal-prices{color:var(--rp-orange)}
 @media (max-width:850px){.rp-nav,.rp-head-phone{display:none}.approved-site .rp-food-stage{height:345px}.rp-pizza-real{height:360px}.rp-contacts{grid-template-columns:1fr}.rp-contacts>div+div{border:0;border-top:1px solid #f2bba5;padding:16px 0 0}.approved-site #products{grid-template-columns:repeat(2,minmax(0,1fr))}}
 @media (max-width:600px){.approved-site header.rp-top{min-height:71px;padding:8px 16px}.rp-brand img{width:51px;height:51px}.rp-brandname{font-size:22px}.rp-brandline{font-size:8px;letter-spacing:2px}.rp-circle{width:40px;height:40px}.approved-site section.rp-hero{padding-top:35px}.rp-kicker{font-size:11px;letter-spacing:.17em}.rp-hero h1{font-size:clamp(45px,10vw,61px)}.rp-hero p{font-size:16px;line-height:1.4;margin:15px auto 19px}.rp-primary{width:100%;min-height:63px;font-size:16px;border-radius:18px}.rp-hours{font-size:12px}.rp-food-stage{height:320px;margin-top:8px}.rp-roll-real{left:-12%;top:33px;width:67%;height:215px;border-radius:14px}.rp-pizza-real{width:74%;height:280px;right:-18%;bottom:-30px}.rp-benefits{padding:12px 0}.rp-benefits>div{display:block;text-align:center;padding:3px 5px}.rp-benefits svg{width:24px;height:24px}.rp-benefits strong{font-size:12px}.rp-benefits span{font-size:11px}.rp-promo-empty{height:74px;margin-top:18px;margin-bottom:24px}.rp-menu-heading h2{font-size:39px}.rp-all{font-size:13px}.rp-categories{gap:9px}.rp-category{min-height:63px;padding:12px 15px;border-radius:15px}.rp-category strong{font-size:15px}.rp-category span{font-size:23px}.rp-story{margin-top:20px;min-height:155px;padding:18px 16px;border-radius:20px;gap:6px}.rp-story h2{font-size:25px}.rp-story p{font-size:12px}.rp-story .rp-mascot{width:92px;height:92px}.rp-contacts{padding:16px;margin-top:12px;border-radius:17px}.rp-contact-text strong,.rp-contact-text a{font-size:17px}.rp-contact-text .rp-phone{font-size:24px}.rp-catalog h2{font-size:35px}.approved-site #products{gap:10px}.approved-site #products .product h3{font-size:15px}.approved-site #products .productBody{padding:9px 10px}.approved-site #products .priceRow{padding:8px 10px 12px}.approved-site #products .add{font-size:12px;padding:8px}.approved-site #products .price{font-size:17px}}
+
+/* User-approved mobile reference: authentic photo, no placeholder, exact footer. */
+.rp-food-stage{background:#fffdf9!important}
+.rp-food-stage .rp-authentic-food{display:block;width:100%;height:100%;object-fit:contain;object-position:center;max-width:1150px;margin:auto}
+.rp-promo-empty,.rp-promo-empty[hidden]{display:none!important}
+.rp-menu-heading{margin-top:20px}
+.rp-story .rp-mascot{border-radius:0!important;object-fit:contain!important;background:transparent!important}
+.rp-drinks-info{grid-column:1/-1;padding:28px;background:#fff;border:1px solid #eee7e0;border-radius:16px;color:#695d56}
+.rp-drinks-info a{color:#fc501d;text-decoration:underline}
+@media(max-width:600px){
+ .rp-food-stage{height:clamp(200px,49vw,345px)!important;margin-top:0!important}
+ .rp-food-stage .rp-authentic-food{width:calc(100% + 44px);margin-left:-22px;max-width:none;height:100%;object-fit:cover;object-position:center}
+ .rp-menu-heading{margin-top:12px}
+ .rp-story .rp-mascot{width:100px;height:100px}
+ .rp-contacts{display:grid;grid-template-columns:1fr 1fr;gap:8px}
+ .rp-contacts>div{display:flex;align-items:center;gap:6px;min-width:0}
+ .rp-contacts>div+div{padding:0;border:0;border-left:1px solid #f1ba9c;padding-left:8px}
+ .rp-contacts .rp-contact-icon{width:27px;height:27px;flex:0 0 27px;font-size:17px}
+ .rp-contact-text strong{font-size:12px!important;line-height:1.2}
+ .rp-contact-text .rp-phone{font-size:clamp(13px,3.4vw,20px)!important;white-space:nowrap}
+ .rp-contact-text small{font-size:10px!important;line-height:1.2}
+}
+@media(max-width:350px){.rp-contacts{grid-template-columns:1fr}.rp-contacts>div+div{padding-top:10px;padding-left:0;border-left:0;border-top:1px solid #f1ba9c}}
+
 </style>
 </head>
 <body class="approved-site">
@@ -55,14 +79,14 @@ html{scroll-behavior:smooth}
 <a class="rp-primary" href="tel:+79632375357"><svg viewBox="0 0 24 24"><path d="M7 3h3l2 5-2 2a15 15 0 0 0 4 4l2-2 5 2v3a4 4 0 0 1-4 4A17 17 0 0 1 3 7a4 4 0 0 1 4-4z"/></svg> ПОЗВОНИТЬ И ЗАКАЗАТЬ <span aria-hidden="true">→</span></a>
 <div class="rp-hours">Принимаем заказы ежедневно с 11:00 до 23:00</div>
 </div>
-<div class="rp-food-stage" aria-label="Настоящие фотографии роллов и пиццы из меню РопиРолл" role="img"><div class="rp-roll-real"></div><div class="rp-pizza-real"></div></div>
+<div class="rp-food-stage"><img class="rp-authentic-food" src="/api/rr-food.webp?v=20261020" alt="Настоящая фотография роллов с лососем и пиццы РопиРолл" loading="eager" fetchpriority="high"></div>
 </div></section>
 <div class="rp-benefits rp-container">
 <div><svg viewBox="0 0 24 24"><path d="M2 6h12v11H2zM14 10h4l4 4v3h-8z"/><circle cx="7" cy="18" r="2"/><circle cx="18" cy="18" r="2"/></svg><div><strong>Доставка</strong><span>по Осоргино<br>и рядом</span></div></div>
 <div><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg><div><strong>Ежедневно</strong><span>11:00–23:00<br>без выходных</span></div></div>
 <div><svg viewBox="0 0 24 24"><path d="M12 22s8-7.1 8-13a8 8 0 1 0-16 0c0 5.9 8 13 8 13z"/><circle cx="12" cy="9" r="2.5"/></svg><div><strong>Осоргино</strong><span>ул. Новая,<br>2/1</span></div></div>
 </div>
-<div class="rp-container"><div class="rp-promo-empty" aria-label="Место для будущих акций" role="presentation"></div></div>
+<div class="rp-container"><div class="rp-promo-empty" hidden aria-hidden="true"></div></div>
 <section id="categories" class="rp-container" aria-label="Наше меню">
 <div class="rp-menu-heading"><div><span class="rp-kicker">ВЫБИРАЙ ЛЮБИМОЕ</span><h2>Наше меню</h2></div><a href="#menu" class="rp-all" data-cat="Все меню">Все позиции →</a></div>
 <div class="rp-categories">
@@ -71,10 +95,10 @@ html{scroll-behavior:smooth}
 <a href="#menu" class="rp-category" data-cat="Сеты"><strong>Сеты</strong><span>→</span></a>
 <a href="#menu" class="rp-category" data-cat="Фритюр"><strong>Фритюр</strong><span>→</span></a>
 <a href="#menu" class="rp-category" data-cat="Салаты"><strong>Салаты</strong><span>→</span></a>
-<a href="#menu" class="rp-category" data-cat="Шаурма"><strong>Шаурма</strong><span>→</span></a>
+<a href="#menu" class="rp-category" data-cat="Напитки"><strong>Напитки</strong><span>→</span></a>
 </div>
 </section>
-<section id="story" class="rp-story rp-container"><div><span class="rp-kicker">О РОПИРОЛЛ</span><h2>Вкусные моменты<br>становятся ближе</h2><p>Готовим пиццу и роллы из свежих ингредиентов и с любовью к вкусу.</p></div><img class="rp-mascot" src="/api/logo?v=31" alt="Маленький Ропи"></section>
+<section id="story" class="rp-story rp-container"><div><span class="rp-kicker">О РОПИРОЛЛ</span><h2>Вкусные моменты<br>становятся ближе</h2><p>Готовим пиццу и роллы из свежих ингредиентов и с любовью к вкусу.</p></div><img class="rp-mascot" src="/api/rr-mascot.webp?v=20261020" alt="Маленький Ропи"></section>
 <section id="menu" class="rp-catalog" hidden aria-label="Полное меню РопиРолл"><div class="rp-container"><a class="rp-back" href="#categories">← Назад к категориям</a><span class="rp-kicker">ЭЛЕКТРОННОЕ МЕНЮ</span><h2>Наши блюда</h2><p>Посмотрите составы и цены, а затем позвоните для заказа.</p><div id="filters" class="filters" role="tablist" aria-label="Разделы меню"></div><div id="products" class="products"></div></div></section>
 </main>
 <footer id="contacts" class="rp-container">
@@ -86,7 +110,7 @@ html{scroll-behavior:smooth}
 </footer>
 <div id="dishShade" class="dishShade" onclick="closeDish()"></div>
 <section id="dishModal" class="dishModal" role="dialog" aria-modal="true" aria-labelledby="dishHeading"><button type="button" class="dishClose" onclick="closeDish()" aria-label="Закрыть">×</button><div id="dishContent"></div></section>
-<script src="/app.js?v=20261020approved"></script>
+<script src="/app.js?v=20261020reference"></script>
 <script>
 (function(){
  const section=document.getElementById('menu');
