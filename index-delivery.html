@@ -60,6 +60,14 @@ html{scroll-behavior:smooth}
 /* Food banner composition matches the approved reference on every screen. */
 .approved-site .rp-food-stage{height:auto!important;aspect-ratio:706/340;margin-top:0!important;background:#fffaf6!important;overflow:hidden}
 .rp-food-stage .rp-authentic-food{display:block;width:100%;height:100%;max-width:none;margin:0;object-fit:cover;object-position:center}
+
+/* Keep phone ordering within reach after the main call button scrolls away. */
+.rp-sticky-call{position:fixed;left:50%;bottom:calc(12px + env(safe-area-inset-bottom,0px));transform:translateX(-50%);z-index:40;box-sizing:border-box;width:min(440px,calc(100% - 28px));min-height:56px;display:flex;align-items:center;justify-content:center;gap:12px;padding:14px 18px;border-radius:16px;background:var(--rp-orange);color:#fff!important;font:800 16px/1.2 Arial,Helvetica,sans-serif;box-shadow:0 6px 24px #6e2b2038}
+.rp-sticky-call[hidden],.dishLocked .rp-sticky-call{display:none!important}
+.rp-sticky-call svg{width:22px;height:22px;fill:none;stroke:currentColor;stroke-width:2.2;stroke-linecap:round;stroke-linejoin:round}
+.rp-sticky-call:hover{filter:brightness(.95)}
+.rp-sticky-call:focus-visible{outline:3px solid #201914;outline-offset:4px}
+.approved-site{padding-bottom:calc(92px + env(safe-area-inset-bottom,0px))}
 </style>
 </head>
 <body class="approved-site">
@@ -127,6 +135,31 @@ html{scroll-behavior:smooth}
  }));
  if(location.hash==='#menu')section.hidden=false;
  document.querySelectorAll('.rp-mobile-nav a').forEach(a=>a.addEventListener('click',()=>document.getElementById('mobileNav').classList.remove('open')));
+})();
+</script>
+<a class="rp-sticky-call" href="tel:+79632375357" hidden aria-label="Позвонить и заказать: +7 963 237-53-57"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 3h3l2 5-2 2a15 15 0 0 0 4 4l2-2 5 2v3a4 4 0 0 1-4 4A17 17 0 0 1 3 7a4 4 0 0 1 4-4z"/></svg><span>Позвонить и заказать</span></a>
+<script>
+(function(){
+ const primary=document.querySelector('.rp-hero .rp-primary');
+ const sticky=document.querySelector('.rp-sticky-call');
+ if(!primary||!sticky)return;
+ const update=()=>{sticky.hidden=primary.getBoundingClientRect().bottom>0;};
+ if('IntersectionObserver' in window){
+   const observer=new IntersectionObserver(entries=>{
+     sticky.hidden=entries[0].boundingClientRect.bottom>0;
+   });
+   observer.observe(primary);
+ }else{
+   let pending=false;
+   window.addEventListener('scroll',()=>{
+     if(pending)return;
+     pending=true;
+     requestAnimationFrame(()=>{update();pending=false;});
+   },{passive:true});
+ }
+ window.addEventListener('resize',update);
+ window.addEventListener('pageshow',update);
+ update();
 })();
 </script>
 </body></html>
