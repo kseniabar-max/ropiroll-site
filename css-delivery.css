@@ -419,3 +419,9 @@ body.approved-site{background:#20201c;color:#f7f1e8;font-family:Arial,sans-serif
 .approved-site .pizza-size-prices b{font-weight:700;color:#d1c7bf}
 .approved-site .pizza-modal-prices{display:flex;flex-direction:column;gap:7px;font-size:19px;line-height:1.2;color:#f7b17b}
 @media(max-width:650px){.approved-site .pizza-size-prices{font-size:13px}.approved-site .pizza-modal-prices{font-size:17px}}
+
+/* Fried food: user-approved original photos, with no forced crop. */
+.approved-site .food-photo.food-photo-fried{display:flex;align-items:center;justify-content:center;overflow:hidden;background:#fff;position:relative}
+.approved-site .food-photo-fried img{display:block;width:100%;height:100%;object-fit:contain;object-position:center}
+.approved-site .food-photo-fried-sprite{display:block;flex:none;width:100%;max-height:100%;aspect-ratio:3/2;background-image:url('/api/fried-photo/sprite');background-size:300% 200%;background-repeat:no-repeat;background-color:#fff}
+.approved-site .dishPhoto .food-photo-fried img{object-fit:contain}
