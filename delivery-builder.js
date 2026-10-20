@@ -20,6 +20,9 @@ assets['category-images'] = {type:'image/webp', b64:fs.readFileSync('category-im
 assets['delivery-map'] = { type: 'image/jpeg', b64: delivery.map };
 assets['hero-food'] = { type: 'image/webp', b64: fs.readFileSync('hero-v60.webp').toString('base64') };
 assets['menu-v42-sprite'] = {type:'image/webp', b64:fs.readFileSync('menu-v42-sprite.webp').toString('base64')};
+for (const key of ['shrimp','strips','calamari','onion','sprite']) {
+  assets['fried-'+key] = {type:'image/webp', b64:fs.readFileSync('fried-assets/'+key+'.webp').toString('base64')};
+}
 
 let output = source.slice(0, found.index) +
   'const assets = ' + JSON.stringify(assets) +
@@ -31,7 +34,8 @@ output = output.replace(anchor,
   'app.get("/home.js", (_req,res) => send(res,assets.home,"no-cache"));\n' +
   'app.get("/delivery-map.jpg", (_req,res) => send(res,assets["delivery-map"]));\n' +
   'app.get("/api/hero-food", (_req,res) => send(res,assets["hero-food"]));\n' +
-  'app.get("/api/menu-v42-sprite.webp", (_req,res) => send(res,assets["menu-v42-sprite"],"no-cache"));\n' + anchor);
+  'app.get("/api/menu-v42-sprite.webp", (_req,res) => send(res,assets["menu-v42-sprite"],"no-cache"));\n' +
+  'app.get("/api/fried-photo/:key", (req,res) => { const key = String(req.params.key||""); if(!["shrimp","strips","calamari","onion","sprite"].includes(key)) return res.status(404).end(); return send(res,assets["fried-"+key],"no-cache"); });\n' + anchor);
 
 // Catalogue mode must reject requests from older cached order pages as well.
 const ordersStart = output.indexOf('let pool;');
