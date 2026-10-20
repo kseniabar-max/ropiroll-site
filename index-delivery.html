@@ -57,6 +57,13 @@ html{scroll-behavior:smooth}
 }
 @media(max-width:350px){.rp-contacts{grid-template-columns:1fr}.rp-contacts>div+div{padding-top:10px;padding-left:0;border-left:0;border-top:1px solid #f1ba9c}}
 
+/* User supplied portrait photo: preserve the complete rolls and pizza. */
+.rp-food-stage{height:540px!important;background:#f6e8d5!important}
+.rp-food-stage .rp-authentic-food{width:100%;height:100%;max-width:100%;margin:0 auto;object-fit:contain;object-position:center}
+@media(max-width:600px){
+ .rp-food-stage{height:auto!important;aspect-ratio:9/16;margin-top:8px!important}
+ .rp-food-stage .rp-authentic-food{width:100%;height:100%;margin:0;object-fit:contain;object-position:center}
+}
 </style>
 </head>
 <body class="approved-site">
@@ -79,7 +86,7 @@ html{scroll-behavior:smooth}
 <a class="rp-primary" href="tel:+79632375357"><svg viewBox="0 0 24 24"><path d="M7 3h3l2 5-2 2a15 15 0 0 0 4 4l2-2 5 2v3a4 4 0 0 1-4 4A17 17 0 0 1 3 7a4 4 0 0 1 4-4z"/></svg> ПОЗВОНИТЬ И ЗАКАЗАТЬ <span aria-hidden="true">→</span></a>
 <div class="rp-hours">Принимаем заказы ежедневно с 11:00 до 23:00</div>
 </div>
-<div class="rp-food-stage"><img class="rp-authentic-food" src="/api/rr-food.webp?v=20261020" alt="Настоящая фотография роллов с лососем и пиццы РопиРолл" loading="eager" fetchpriority="high"></div>
+<div class="rp-food-stage"><img class="rp-authentic-food" src="/api/rr-food.webp?v=20261020-new-photo" alt="Настоящая фотография роллов с лососем и пиццы РопиРолл" loading="eager" fetchpriority="high"></div>
 </div></section>
 <div class="rp-benefits rp-container">
 <div><svg viewBox="0 0 24 24"><path d="M2 6h12v11H2zM14 10h4l4 4v3h-8z"/><circle cx="7" cy="18" r="2"/><circle cx="18" cy="18" r="2"/></svg><div><strong>Доставка</strong><span>по Осоргино<br>и рядом</span></div></div>
