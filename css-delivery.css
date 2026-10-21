@@ -427,3 +427,20 @@ body.approved-site{background:#20201c;color:#f7f1e8;font-family:Arial,sans-serif
 .approved-site .dishPhoto .food-photo-fried img{object-fit:contain}
 
 .food-photo.food-photo-real{background:#fff;display:flex;align-items:center;justify-content:center}.food-photo-real img{display:block;width:100%;height:100%;object-fit:contain;object-position:center}
+
+
+/* Cold and baked preparation share one roll card. */
+.rp-roll-bake-note{font-size:12px;color:#b4491b;line-height:1.4;margin:8px 0 0}
+.rp-roll-preparation{border:0;padding:0;margin:18px 0 0;display:grid;gap:9px;min-width:0}
+.rp-roll-preparation legend{padding:0;margin-bottom:10px;font-size:15px;font-weight:700;color:#3d2a21}
+.rp-roll-option{display:flex;align-items:center;gap:10px;padding:13px 11px;border:1px solid #e4d6c7;border-radius:13px;background:#fff;min-height:70px;cursor:pointer;color:#342117}
+.rp-roll-option:has(input:checked){border-color:#f25322;background:#fff0e8}
+.rp-roll-option input{accent-color:#f25322;width:18px;height:18px;margin:0;flex:none}
+.rp-roll-option>span{flex:1;min-width:0}
+.rp-roll-option b{font-size:14px;display:block}
+.rp-roll-option small{font-size:12px;color:#7b6250;display:block;margin-top:5px;line-height:1.4}
+.rp-roll-option strong{font-size:15px;white-space:nowrap}
+.rp-roll-total{display:flex;justify-content:space-between;align-items:center;margin:20px 0 8px;font-size:14px;color:#342117}
+.rp-roll-total strong{font-size:27px;color:#ef4d1b}
+.dishInfo .rp-roll-summary{font-size:12px;color:#7b6250;line-height:1.5;margin:0 0 15px}
+.rp-roll-call{display:flex;align-items:center;justify-content:center;width:100%;min-height:48px;text-align:center}
