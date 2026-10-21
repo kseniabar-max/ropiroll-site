@@ -1,5 +1,6 @@
 import fs from 'node:fs';
 import path from 'node:path';
+import { createHash } from 'node:crypto';
 import AdmZip from 'adm-zip';
 
 if (!fs.existsSync('server-logo.js')) {
@@ -12,7 +13,14 @@ if (!found) throw new Error('Не удалось найти файлы сайт�
 
 const assets = JSON.parse(found[1]);
 const delivery = JSON.parse(fs.readFileSync('delivery-assets.json', 'utf8'));
-assets.index.b64 = fs.readFileSync('index-delivery.html').toString('base64');
+// Change asset URLs with their contents so Safari cannot reuse an older layout.
+const assetVersion = createHash('sha256')
+  .update(fs.readFileSync('css-delivery.css'))
+  .update(fs.readFileSync('app-redesign.js'))
+  .digest('hex').slice(0, 16);
+assets.index.b64 = Buffer.from(fs.readFileSync('index-delivery.html', 'utf8')
+  .replace(/\/(style\.css|app\.js)\?v=[^"']+/g, '/$1?v=' + assetVersion))
+  .toString('base64');
 assets.css.b64 = fs.readFileSync('css-delivery.css').toString('base64');
 assets.js.b64 = fs.readFileSync('app-redesign.js').toString('base64');
 assets.home = {type:'application/javascript; charset=utf-8', b64:fs.readFileSync('home.js').toString('base64')};
@@ -33,6 +41,8 @@ for (const key of ["super-meat", "hunter", "pepperoni", "salmon", "mushroom", "m
 let output = source.slice(0, found.index) +
   'const assets = ' + JSON.stringify(assets) +
   source.slice(found.index + found[0].length);
+// Styles must revalidate as well as scripts when opening an existing tab.
+output = output.replace('send(res,assets.css)', 'send(res,assets.css,"no-cache")');
 const anchor = 'app.get("/api/logo",';
 if (!output.includes(anchor)) throw new Error('Не удалось добавить изображения');
 output = output.replace(anchor,
