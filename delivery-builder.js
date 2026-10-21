@@ -26,12 +26,18 @@ for (const key of ['shrimp','strips','calamari','onion','sprite']) {
   assets['fried-'+key] = {type:'image/webp', b64:fs.readFileSync('fried-assets/'+key+'.webp').toString('base64')};
 }
 
+assets['pizza-20261021'] = {type:'image/webp',b64:fs.readFileSync('pizza-20261021.webp').toString('base64')};
+
+assets['pizza-salads-20261021'] = {type:'image/webp',b64:fs.readFileSync('pizza-salads-20261021.webp').toString('base64')};
+
 let output = source.slice(0, found.index) +
   'const assets = ' + JSON.stringify(assets) +
   source.slice(found.index + found[0].length);
 const anchor = 'app.get("/api/logo",';
 if (!output.includes(anchor)) throw new Error('Не удалось добавить изображения');
 output = output.replace(anchor,
+  'app.get("/api/pizza-20261021.webp", (_req,res) => send(res,assets["pizza-20261021"],"no-cache"));\n' +
+  'app.get("/api/pizza-salads-20261021.webp", (_req,res) => send(res,assets["pizza-salads-20261021"],"no-cache"));\n' +
   'app.get("/api/category-images", (_req,res) => send(res,assets["category-images"]));\n' +
   'app.get("/home.js", (_req,res) => send(res,assets.home,"no-cache"));\n' +
   'app.get("/delivery-map.jpg", (_req,res) => send(res,assets["delivery-map"]));\n' +
