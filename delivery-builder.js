@@ -36,7 +36,7 @@ for (const key of ['shrimp','strips','calamari','onion','sprite']) {
 
 
 
-for (const key of ["super-meat", "hunter", "pepperoni", "salmon", "mushroom", "margherita", "four-cheeses", "caesar-shrimp", "caesar-chicken", "set-california", "shawarma-cheese", "shawarma-thai", "shawarma-long"]) { assets['catalog-'+key]={type:'image/webp',b64:fs.readFileSync('catalog-photos/'+key+'.webp').toString('base64')}; }
+for (const key of ["tatar", "pizza-caesar", "bavarian", "hawaiian", "carpaccio", "super-meat", "hunter", "pepperoni", "salmon", "mushroom", "margherita", "four-cheeses", "caesar-shrimp", "caesar-chicken", "set-california", "shawarma-cheese", "shawarma-thai", "shawarma-long"]) { assets['catalog-'+key]={type:'image/webp',b64:fs.readFileSync('catalog-photos/'+key+'.webp').toString('base64')}; }
 
 let output = source.slice(0, found.index) +
   'const assets = ' + JSON.stringify(assets) +
@@ -85,4 +85,5 @@ if (!fs.existsSync(modulesLink)) {
 }
 fs.writeFileSync(path.join(runtimeDir, 'server-delivery-live.js'), output);
 console.log('Готов электронный каталог с заказом только по телефону');
+
 
