@@ -78,6 +78,41 @@ html{scroll-behavior:smooth}
 .approved-site .rp-baked-photo{display:block;width:100%;height:auto;object-fit:contain}
 @media(max-width:650px){.approved-site .rp-baked-promo{grid-template-columns:1fr;gap:22px;padding:26px 22px;margin:22px 0 32px;border-radius:20px}.approved-site .rp-baked-promo .rp-baked-copy h2{font-size:clamp(30px,8.5vw,40px)}.approved-site .rp-baked-promo .rp-baked-copy p{font-size:22px}.approved-site .rp-baked-photo{max-height:300px}}
 </style>
+
+<style id="classic-choice-styles">
+.classic-group-card .price{font-size:28px!important;font-weight:800!important;color:#25170e!important;-webkit-text-fill-color:#25170e!important;opacity:1!important;visibility:visible!important}
+.classic-choice{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:24px;padding:24px;background:#fffdf9;color:#30251e;font-family:Arial,sans-serif;box-sizing:border-box}
+.classic-choice *{box-sizing:border-box}
+.classic-choice .cc-media{min-width:0;align-self:start}
+.classic-choice .cc-photo{width:100%;overflow:hidden;border-radius:16px;background:#fff}
+.classic-choice .cc-photo .photo,.classic-choice .cc-photo .food-photo{display:block!important;width:100%!important;height:auto!important;min-height:0!important;aspect-ratio:3/2;margin:0!important;background-color:#fff!important}
+.classic-choice .cc-photo .food-photo svg{display:block;width:100%;height:100%}
+.classic-choice .cc-photo .photo-roll-set{display:flex!important;align-items:center;justify-content:center}
+.classic-choice .cc-photo .roll-set-sprite{width:100%;height:100%;aspect-ratio:3/2}
+.classic-choice .cc-photo-caption{font-size:12px;color:#806b5c;margin:10px 0}
+.classic-choice .cc-info{min-width:0}
+.classic-choice h2{font-size:28px;line-height:1.15;margin:0 0 8px;color:#30251e;-webkit-text-fill-color:#30251e}
+.classic-choice .cc-subtitle{font-size:14px;color:#806b5c;margin:0 0 22px}
+.classic-choice .cc-fieldset{border:0;padding:0;margin:0 0 22px;min-width:0}
+.classic-choice legend{font-size:15px;font-weight:700;margin-bottom:10px;padding:0;color:#30251e}
+.classic-choice .cc-fillings{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:8px}
+.classic-choice button{font:inherit;border:1px solid #e3d6c8;border-radius:11px;background:#fffdf9;color:#49392e;cursor:pointer;min-height:48px;text-align:left;padding:10px;box-shadow:none}
+.classic-choice button[aria-pressed="true"]{background:#fff0e3;border:2px solid #e97031;padding:9px;color:#94320f}
+.classic-choice button span{display:block;font-size:14px;color:inherit}
+.classic-choice .cc-filling strong{display:block;font-size:16px;margin-top:6px;color:#30251e!important;-webkit-text-fill-color:#30251e!important;opacity:1!important}
+.classic-choice .cc-preparation{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.classic-choice .cc-prep small{display:block;font-size:12px;line-height:1.4;color:#806b5c;margin:7px 0}
+.classic-choice .cc-option-price{display:block;font-size:21px;color:#30251e!important;-webkit-text-fill-color:#30251e!important;opacity:1!important}
+.classic-choice .cc-composition h3{font-size:14px;margin:0 0 7px;color:#30251e}
+.classic-choice .cc-composition p{font-size:14px;line-height:1.5;margin:0;color:#756153}
+.classic-choice .cc-total{display:flex;justify-content:space-between;align-items:center;gap:12px;margin:20px 0 16px;padding:18px 16px;border-radius:12px;background:#ffeddf;color:#25170e}
+.classic-choice .cc-total-label{display:block;font-size:13px;color:#5e4635;margin-bottom:6px}
+.classic-choice .cc-price{display:block!important;font-size:36px!important;line-height:1.1!important;font-weight:800!important;color:#25170e!important;-webkit-text-fill-color:#25170e!important;opacity:1!important;visibility:visible!important;font-variant-numeric:tabular-nums;white-space:nowrap}
+.classic-choice .cc-summary{font-size:12px;line-height:1.5;text-align:right;max-width:45%;margin:0;color:#5e4635}
+.classic-choice .cc-call{display:block;text-align:center;border-radius:12px;padding:16px 10px;background:#ef5925;color:#fff!important;-webkit-text-fill-color:#fff!important;font-size:15px;font-weight:700;text-decoration:none}
+@media(max-width:650px){.classic-choice{grid-template-columns:1fr;gap:14px;padding:20px}.classic-choice .cc-media{max-width:420px;width:100%;justify-self:center}.classic-choice h2{font-size:26px}}
+@media(max-width:360px){.classic-choice{padding:16px}.classic-choice .cc-fillings{gap:6px}.classic-choice button{padding:8px}.classic-choice button[aria-pressed="true"]{padding:7px}.classic-choice .cc-prep small{font-size:11px}}
+</style>
 </head>
 <body class="approved-site">
 <header class="rp-top">
@@ -176,4 +211,5 @@ html{scroll-behavior:smooth}
 })();
 </script>
 </body></html>
+
 
