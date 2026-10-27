@@ -36,7 +36,7 @@ for (const key of ['shrimp','strips','calamari','onion','sprite']) {
 
 
 
-for (const key of ["classic-eel-20261026", "chicken-bbq-20261023", "volcano-20261022", "tatar", "pizza-caesar", "bavarian", "hawaiian", "carpaccio", "super-meat", "hunter", "pepperoni", "salmon", "mushroom", "margherita", "four-cheeses", "caesar-shrimp", "caesar-chicken", "set-california", "shawarma-cheese", "shawarma-thai", "shawarma-long"]) { assets['catalog-'+key]={type:'image/webp',b64:fs.readFileSync('catalog-photos/'+key+'.webp').toString('base64')}; }
+for (const key of ["set-more-love-20261028","set-spring-20261028","set-assorti-20261028","set-mexico-20261028","set-fish-20261028","set-sea-gifts-20261028","set-hot-20261028","set-men-20261028","set-classic-20261028","set-evening-20261028","classic-eel-20261026", "chicken-bbq-20261023", "volcano-20261022", "tatar", "pizza-caesar", "bavarian", "hawaiian", "carpaccio", "super-meat", "hunter", "pepperoni", "salmon", "mushroom", "margherita", "four-cheeses", "caesar-shrimp", "caesar-chicken", "set-california", "shawarma-cheese", "shawarma-thai", "shawarma-long"]) { assets['catalog-'+key]={type:'image/webp',b64:fs.readFileSync('catalog-photos/'+key+'.webp').toString('base64')}; }
 
 let output = source.slice(0, found.index) +
   'const assets = ' + JSON.stringify(assets) +
