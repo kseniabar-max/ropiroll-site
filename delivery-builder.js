@@ -30,6 +30,9 @@ assets['hero-food'] = { type: 'image/webp', b64: fs.readFileSync('hero-v60.webp'
 assets['rr-food'] = {type:'image/webp',b64:fs.readFileSync('assets/rr-food.webp').toString('base64')};
 assets['rr-mascot'] = {type:'image/webp',b64:fs.readFileSync('assets/rr-mascot.webp').toString('base64')};
 assets['menu-v42-sprite'] = {type:'image/webp', b64:fs.readFileSync('menu-v42-sprite.webp').toString('base64')};
+for (const key of ['wasabi','ginger','soy','chopsticks','cheese','bbq']) {
+  assets['addon-'+key] = {type:'image/webp', b64:fs.readFileSync('assets/addons/'+key+'.webp').toString('base64')};
+}
 for (const key of ['shrimp','strips','calamari','onion','sprite']) {
   assets['fried-'+key] = {type:'image/webp', b64:fs.readFileSync('fried-assets/'+key+'.webp').toString('base64')};
 }
@@ -47,6 +50,7 @@ const anchor = 'app.get("/api/logo",';
 if (!output.includes(anchor)) throw new Error('Не удалось добавить изображения');
 output = output.replace(anchor,
   'app.get("/api/catalog-photo/:key", (req,res) => { const asset=assets["catalog-"+String(req.params.key)]; if(!asset)return res.status(404).end();return send(res,asset,"no-cache"); });\n' +
+  'app.get("/api/addon-photo/:key", (req,res) => { const key=String(req.params.key||""); if(!["wasabi","ginger","soy","chopsticks","cheese","bbq"].includes(key))return res.status(404).end(); return send(res,assets["addon-"+key],"no-cache"); });\n' +
   'app.get("/api/category-images", (_req,res) => send(res,assets["category-images"]));\n' +
   'app.get("/home.js", (_req,res) => send(res,assets.home,"no-cache"));\n' +
   'app.get("/delivery-map.jpg", (_req,res) => send(res,assets["delivery-map"]));\n' +
