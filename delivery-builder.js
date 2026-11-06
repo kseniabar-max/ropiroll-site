@@ -22,6 +22,15 @@ assets.index.b64 = Buffer.from(fs.readFileSync('index-delivery.html', 'utf8')
   .replace(/\/(style\.css|app\.js)\?v=[^"']+/g, '/$1?v=' + assetVersion))
   .toString('base64');
 assets.css.b64 = fs.readFileSync('css-delivery.css').toString('base64');
+// Legal documents are served as standalone pages while preserving the phone-only catalogue.
+const legalSlugs = ["offer", "privacy", "consent", "delivery", "requisites"];
+for (const slug of legalSlugs) {
+  assets["legal-" + slug] = {
+    type: "text/html; charset=utf-8",
+    b64: fs.readFileSync("legal/" + slug + ".html").toString("base64")
+  };
+}
+
 assets.js.b64 = fs.readFileSync('app-redesign.js').toString('base64');
 assets.home = {type:'application/javascript; charset=utf-8', b64:fs.readFileSync('home.js').toString('base64')};
 assets['category-images'] = {type:'image/webp', b64:fs.readFileSync('category-images-v61.webp').toString('base64')};
@@ -69,6 +78,15 @@ output = output.slice(0, ordersStart) +
   'app.all("/api/order", (_req,res) => res.status(405).json({error:"Заказы принимаются только по телефону",phone:"+79632375357"}));\n' +
   output.slice(ordersEnd);
 // Diagnostics: identify the exact version served on the real domain.
+const legalRoutes = [
+  'app.get("/legal/:slug", (req,res) => { const slug=String(req.params.slug || ""); if (!["offer","privacy","consent","delivery","requisites"].includes(slug)) return res.status(404).end(); res.set("Cache-Control","no-cache"); return send(res,assets["legal-"+slug],"no-cache"); });',
+  'app.get("/legal", (_req,res) => res.redirect(302,"/legal/requisites"));'
+].join("\n");
+const legalFallbackAnchor = 'app.use((_req,res)=>send(res,assets.index';
+const legalFallbackPosition = output.indexOf(legalFallbackAnchor);
+if (legalFallbackPosition < 0) throw new Error('Не удалось найти финальный маршрут сайта');
+output = output.slice(0,legalFallbackPosition) + legalRoutes + "\n" + output.slice(legalFallbackPosition);
+
 const diagnosticAnchor = 'app.use((_req,res)=>send(res,assets.index';
 const diagnosticPosition = output.indexOf(diagnosticAnchor);
 if (diagnosticPosition < 0) throw new Error('Не удалось найти обработчик главной страницы');
