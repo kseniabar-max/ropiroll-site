@@ -116,10 +116,21 @@ html{scroll-behavior:smooth}
 @media(max-width:360px){.classic-choice{padding:16px}.classic-choice .cc-fillings{gap:6px}.classic-choice button{padding:8px}.classic-choice button[aria-pressed="true"]{padding:7px}.classic-choice .cc-prep small{font-size:11px}}
 </style>
 <style>
-.rp-legal-links{display:flex;justify-content:center;flex-wrap:wrap;gap:8px 20px;padding:16px 20px 11px;text-align:center;max-width:1100px;margin:0 auto;border-top:1px solid rgba(83,57,38,.13)}
-.rp-legal-links a{color:#67544a;font-size:12px;font-weight:650;line-height:1.4;text-decoration:underline;text-underline-offset:3px}
-.rp-legal-links a:hover{color:#f35a21}
-@media(max-width:600px){.rp-legal-links{gap:11px 18px;padding-top:22px}.rp-legal-links a{font-size:12px}}
+.approved-site .rp-legal-details{max-width:560px;margin:0 auto 16px;background:#faf6f1;border:1px solid #e8e0d8;border-radius:17px;color:#584d46;overflow:hidden}
+.approved-site .rp-legal-details summary{display:flex;align-items:center;justify-content:space-between;gap:12px;min-height:66px;padding:13px 17px;list-style:none;cursor:pointer;user-select:none}
+.approved-site .rp-legal-details summary::-webkit-details-marker{display:none}
+.approved-site .rp-legal-heading{display:flex;align-items:center;gap:10px;min-width:0}
+.approved-site .rp-legal-heading svg{width:19px;height:19px;flex:none;color:#82766f;stroke:currentColor;fill:none;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
+.approved-site .rp-legal-heading strong{display:block;color:#584d46;font-size:14px;font-weight:650;line-height:1.3}
+.approved-site .rp-legal-heading small{display:block;color:#9b8f87;font-size:11px;line-height:1.4;margin-top:2px}
+.approved-site .rp-legal-chevron{width:18px;height:18px;flex:none;color:#82766f;transition:transform .2s ease}
+.approved-site .rp-legal-details[open] .rp-legal-chevron{transform:rotate(180deg)}
+.approved-site .rp-legal-panel{border-top:1px solid #e8e0d8;padding:5px 17px 12px}
+.approved-site .rp-legal-panel a{display:block;padding:11px 0;color:#5c514b!important;font-size:13px!important;font-weight:500!important;line-height:1.45;text-align:left;text-decoration:none!important;text-transform:none!important;letter-spacing:normal!important}
+.approved-site .rp-legal-panel a+a{border-top:1px solid #ece5de}
+.approved-site .rp-legal-panel a:hover,.approved-site .rp-legal-panel a:focus-visible{color:#e85a2c!important}
+.approved-site .rp-legal-details summary:focus-visible,.approved-site .rp-legal-panel a:focus-visible{outline:2px solid #f35a21;outline-offset:-3px}
+@media(max-width:600px){.approved-site .rp-legal-details{margin:0 auto 14px}.approved-site .rp-legal-details summary{padding:12px 14px}.approved-site .rp-legal-panel{padding:4px 14px 10px}}
 </style></head>
 <body class="approved-site">
 <header class="rp-top">
@@ -173,13 +184,22 @@ html{scroll-behavior:smooth}
 <div><span class="rp-contact-icon">⌖</span><span class="rp-contact-text"><small>Наш адрес:</small><strong>деревня Осоргино, ул. Новая 2/1</strong></span></div>
 <div><span class="rp-contact-icon">☎</span><span class="rp-contact-text"><small>Ежедневно с 11:00 до 23:00</small><a class="rp-phone" href="tel:+79632375357">+7 963 237-53-57</a></span></div>
 </div>
-<nav class="rp-legal-links" aria-label="Правовая информация">
+<details class="rp-legal-details">
+<summary>
+<span class="rp-legal-heading">
+<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 3.5h8l4 4v13H6a2 2 0 0 1-2-2v-13a2 2 0 0 1 2-2Z"/><path d="M14 3.5v4h4M8 12h7M8 16h7"/></svg>
+<span><strong>Правовая информация</strong><small>Нажмите, чтобы посмотреть документы</small></span>
+</span>
+<svg class="rp-legal-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg>
+</summary>
+<nav class="rp-legal-panel" aria-label="Юридические документы">
 <a href="/legal/offer">Публичная оферта</a>
+<a href="/legal/delivery">Оплата, доставка и возврат</a>
 <a href="/legal/privacy">Политика обработки персональных данных</a>
 <a href="/legal/consent">Согласие на обработку персональных данных</a>
-<a href="/legal/delivery">Оплата, доставка и возврат</a>
 <a href="/legal/requisites">Реквизиты продавца</a>
 </nav>
+</details>
 <div class="rp-footer-note">© 2026 РопиРолл · ИП Валеева Е. В. · ИНН 027614781464 · Заказы по телефону</div>
 </footer>
 <div id="dishShade" class="dishShade" onclick="closeDish()"></div>
