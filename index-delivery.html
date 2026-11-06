@@ -115,7 +115,12 @@ html{scroll-behavior:smooth}
 @media(max-width:650px){.classic-choice{grid-template-columns:1fr;gap:14px;padding:20px}.classic-choice .cc-media{max-width:420px;width:100%;justify-self:center}.classic-choice h2{font-size:26px}}
 @media(max-width:360px){.classic-choice{padding:16px}.classic-choice .cc-fillings{gap:6px}.classic-choice button{padding:8px}.classic-choice button[aria-pressed="true"]{padding:7px}.classic-choice .cc-prep small{font-size:11px}}
 </style>
-</head>
+<style>
+.rp-legal-links{display:flex;justify-content:center;flex-wrap:wrap;gap:8px 20px;padding:16px 20px 11px;text-align:center;max-width:1100px;margin:0 auto;border-top:1px solid rgba(83,57,38,.13)}
+.rp-legal-links a{color:#67544a;font-size:12px;font-weight:650;line-height:1.4;text-decoration:underline;text-underline-offset:3px}
+.rp-legal-links a:hover{color:#f35a21}
+@media(max-width:600px){.rp-legal-links{gap:11px 18px;padding-top:22px}.rp-legal-links a{font-size:12px}}
+</style></head>
 <body class="approved-site">
 <header class="rp-top">
 <a href="#home" class="rp-brand" aria-label="РопиРолл — главная">
@@ -168,7 +173,14 @@ html{scroll-behavior:smooth}
 <div><span class="rp-contact-icon">⌖</span><span class="rp-contact-text"><small>Наш адрес:</small><strong>деревня Осоргино, ул. Новая 2/1</strong></span></div>
 <div><span class="rp-contact-icon">☎</span><span class="rp-contact-text"><small>Ежедневно с 11:00 до 23:00</small><a class="rp-phone" href="tel:+79632375357">+7 963 237-53-57</a></span></div>
 </div>
-<div class="rp-footer-note">© 2026 РопиРолл · Заказы по телефону · Электронное меню</div>
+<nav class="rp-legal-links" aria-label="Правовая информация">
+<a href="/legal/offer">Публичная оферта</a>
+<a href="/legal/privacy">Политика обработки персональных данных</a>
+<a href="/legal/consent">Согласие на обработку персональных данных</a>
+<a href="/legal/delivery">Оплата, доставка и возврат</a>
+<a href="/legal/requisites">Реквизиты продавца</a>
+</nav>
+<div class="rp-footer-note">© 2026 РопиРолл · ИП Валеева Е. В. · ИНН 027614781464 · Заказы по телефону</div>
 </footer>
 <div id="dishShade" class="dishShade" onclick="closeDish()"></div>
 <section id="dishModal" class="dishModal" role="dialog" aria-modal="true" aria-labelledby="dishHeading"><button type="button" class="dishClose" onclick="closeDish()" aria-label="Закрыть">×</button><div id="dishContent"></div></section>
