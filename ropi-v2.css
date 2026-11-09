@@ -1,0 +1,75 @@
+/* РопиРолл: первый этап переноса утверждённой светлой темы.
+   Не меняет каталог, суммы, составы, работу заказа и серверные API. */
+:root{--rp-orange:#f45c28;--rp-cream:#fff9f5;--rp-ink:#241913}
+.approved-site{background:var(--rp-cream)!important;color:var(--rp-ink)!important;font-family:Arial,Helvetica,sans-serif!important}
+.approved-site header.rp-top{background:#fffdfb!important;border-bottom:1px solid #f4e8dd!important;min-height:78px}
+.rp-brandname,.rp-brandname b,.rp-brandname em{font-weight:900!important;font-style:italic!important;letter-spacing:-1.3px!important}
+.rp-brandname{color:#201815!important}
+.rp-brandname b{color:#201815!important}
+.rp-brandname em{color:#f25b28!important}
+.rp-brandline{color:#4c3b30!important;letter-spacing:.65px!important;font-weight:750!important}
+.rp-hero{padding:18px 0 0!important;background:#fff9f5!important}
+.approved-site .rp-hero>.rp-container{display:grid;grid-template-columns:43% 57%;gap:0;align-items:center;background:linear-gradient(130deg,#fffaf7,#fff0e5);border-radius:25px;overflow:hidden;border:1px solid #f3e2d5}
+.rp-hero-copy{padding:35px 0 35px 36px!important;text-align:left!important}
+.rp-kicker{color:var(--rp-orange);font-weight:900}
+.rp-hero h1{font-family:Arial,Helvetica,sans-serif!important;font-size:clamp(38px,4.6vw,62px)!important;line-height:1.04!important;letter-spacing:-2px!important;font-weight:950!important;color:#261813!important}
+.rp-hero h1 em{font-style:normal!important;color:#261813!important}
+.rp-hero p{font-size:16px!important;margin:15px 0 23px!important;color:#564339!important;max-width:355px!important}
+.rp-hero .rp-primary{min-height:56px!important;font-size:14px!important;margin:0!important;text-transform:none!important;border-radius:14px!important}
+.rp-hero .rp-hours{font-size:12px!important;margin:12px 0 0!important;text-align:left!important}
+.rp-food-stage{height:355px!important;aspect-ratio:auto!important;background:#fff1e6!important;position:relative!important}
+.rp-food-stage .rp-authentic-food{width:100%!important;height:100%!important;object-fit:cover!important;object-position:center!important;margin:0!important;max-width:none!important}
+.rp-benefits{gap:13px!important;border:0!important;background:transparent!important;padding:14px 0!important}
+.rp-benefits>div{background:#fff!important;border:1px solid #f1e1d6!important;border-radius:16px!important;box-shadow:0 5px 15px #5b352311!important;align-items:center!important;padding:13px 12px!important}
+.rp-benefits strong{font-size:14px!important;color:#281d17!important}
+.rp-benefits span{font-size:12px!important}
+.rp-v2-delivery{display:flex;gap:20px;align-items:center;background:#fff0e2;border:1px solid #f1d9ca;border-radius:20px;margin:12px auto 25px;padding:19px 24px;color:#36251d}
+.rp-v2-delivery svg{width:49px;height:49px;fill:none;stroke:#ef5a2a;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round;flex:none}
+.rp-v2-delivery b{display:block;font-size:23px;letter-spacing:-.65px}
+.rp-v2-delivery p{font-size:13px;color:#6d594d;line-height:1.5;margin:3px 0 0}
+.rp-menu-heading h2{font-family:Arial,Helvetica,sans-serif!important;font-size:38px!important;letter-spacing:-1px!important;font-weight:900!important}
+.rp-categories{display:grid!important;grid-template-columns:repeat(3,minmax(0,1fr))!important;gap:12px!important}
+.rp-category{display:flex!important;flex-direction:column!important;min-height:220px!important;padding:9px 11px 13px!important;align-items:stretch!important;border-radius:20px!important;box-shadow:0 7px 19px #77432912!important;background:linear-gradient(145deg,#fffefd,#fff2e7)!important}
+.rp-category img{width:100%!important;height:160px!important;object-fit:contain!important;filter:drop-shadow(0 4px 6px #4c2c2118)}
+.rp-category .rp-cat-bottom{display:flex;justify-content:space-between;align-items:center;padding:0 6px}
+.rp-category strong{font-size:18px!important;font-weight:900!important}
+.rp-category span{font-size:23px!important;color:#f25b28!important}
+.rp-v2-extras{display:flex;align-items:center;gap:17px;margin:10px 0 22px;color:#795e50;font-size:13px;font-weight:750}
+.rp-v2-extras a{color:#8b5641}
+.rp-v2-extras a:hover{color:#e85e31}
+.rp-baked-promo{background:#fff0e6!important;border:2px solid #f26639!important;border-radius:20px!important;min-height:220px!important;box-shadow:0 6px 17px #7038200c!important;overflow:hidden!important}
+.rp-baked-copy h2{font-family:Arial,Helvetica,sans-serif!important;font-weight:900!important;color:#a9391c!important;font-size:clamp(22px,3vw,32px)!important;letter-spacing:-.6px!important;line-height:1.14!important}
+.rp-baked-copy p{color:#624438!important}
+.rp-baked-link{background:#f46028!important;color:#fff!important;border-radius:12px!important}
+.rp-baked-photo{object-fit:contain!important}
+.rp-story{background:#fff2e7!important;border-radius:20px!important}
+.approved-site #products .product{background:#fffdfa!important;border:1px solid #f1e2d7!important;border-radius:17px!important;box-shadow:0 7px 17px #61371e12!important}
+.approved-site #products .pic img{object-fit:contain!important}
+.rp-contacts{border-radius:19px!important;background:#fffaf6!important}
+.rp-legal-details{border-radius:15px!important}
+@media(max-width:850px){
+  .approved-site .rp-hero>.rp-container{grid-template-columns:1fr}
+  .rp-hero-copy{padding:22px 20px 10px!important;text-align:left!important}
+  .rp-hero h1{font-size:clamp(34px,9vw,48px)!important;line-height:1.02!important}
+  .rp-hero p{font-size:13px!important;line-height:1.35!important;margin:12px 0 14px!important}
+  .rp-hero .rp-primary{width:100%!important;margin:0 auto!important;min-height:52px!important}
+  .rp-hero .rp-hours{text-align:center!important;font-size:11px!important}
+  .approved-site .rp-food-stage{height:270px!important;min-height:0!important;aspect-ratio:auto!important}
+  .rp-benefits{gap:7px!important}
+  .rp-benefits>div{display:flex!important;flex-direction:column!important;justify-content:center!important;gap:3px!important;min-height:83px!important;padding:8px 5px!important}
+  .rp-benefits strong{font-size:11px!important;text-align:center!important}
+  .rp-benefits span{font-size:10px!important;text-align:center!important}
+  .rp-v2-delivery{gap:11px;margin:11px auto 17px;padding:13px;border-radius:16px}
+  .rp-v2-delivery svg{width:36px;height:36px}
+  .rp-v2-delivery b{font-size:20px}
+  .rp-v2-delivery p{font-size:11px}
+  .rp-menu-heading h2{font-size:30px!important}
+  .rp-categories{gap:8px!important}
+  .rp-category{min-height:130px!important;border-radius:15px!important;padding:6px 5px 9px!important}
+  .rp-category img{height:90px!important}
+  .rp-category strong{font-size:12px!important}
+  .rp-category span{font-size:18px!important}
+  .rp-baked-promo{min-height:150px!important}
+  .rp-baked-copy h2{font-size:19px!important}
+}
+@media(max-width:360px){.rp-category img{height:78px!important}.rp-category strong{font-size:11px!important}.rp-v2-delivery b{font-size:18px}}
