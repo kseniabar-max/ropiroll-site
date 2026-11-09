@@ -18,6 +18,7 @@ const assetVersion = createHash('sha256')
   .update(fs.readFileSync('css-delivery.css'))
   .update(fs.readFileSync('app-redesign.js'))
   .digest('hex').slice(0, 16);
+assets['careers-team'] = {type:'image/webp', b64:fs.readFileSync('assets/ropiroll-team.webp').toString('base64')};
 const careersBlock = `
 <style>
 #rr-careers{max-width:1160px;margin:55px auto;padding:clamp(22px,5vw,44px);border:2px solid #f36b43;border-radius:28px;background:#fff7ef;color:#241d1a;box-sizing:border-box;font-family:inherit}
@@ -41,7 +42,7 @@ const careersBlock = `
 <p>Осоргино, ул. Новая, 2/1</p>
 <p>По всем вопросам звоните:</p>
 <a class="rr-call" href="tel:+79874928568" aria-label="Позвонить по вакансии">☎ &nbsp;8 (987) 492-85-68</a>
-<img src="https://ropiroll-dizain.hatchable.site/images/careers-team.webp" alt="Команда поваров РопиРолл" loading="lazy" width="1672" height="941">
+<img src="/api/careers-team.webp" alt="Команда поваров РопиРолл" loading="lazy" width="1672" height="941">
 </section>`;
 assets.index.b64 = Buffer.from(fs.readFileSync('index-delivery.html', 'utf8')
   .replace('</main>', careersBlock + '</main>')
@@ -85,6 +86,7 @@ output = output.replace('send(res,assets.css)', 'send(res,assets.css,"no-cache")
 const anchor = 'app.get("/api/logo",';
 if (!output.includes(anchor)) throw new Error('Не удалось добавить изображения');
 output = output.replace(anchor,
+  'app.get("/api/careers-team.webp", (_req,res) => send(res,assets["careers-team"],"no-cache"));\n' +
   'app.get("/api/catalog-photo/:key", (req,res) => { const asset=assets["catalog-"+String(req.params.key)]; if(!asset)return res.status(404).end();return send(res,asset,"no-cache"); });\n' +
   'app.get("/api/addon-photo/:key", (req,res) => { const key=String(req.params.key||""); if(!["wasabi","ginger","soy","chopsticks","cheese","bbq"].includes(key))return res.status(404).end(); return send(res,assets["addon-"+key],"no-cache"); });\n' +
   'app.get("/api/category-images", (_req,res) => send(res,assets["category-images"]));\n' +
