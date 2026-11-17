@@ -21,26 +21,26 @@ const assetVersion = createHash('sha256')
 assets['careers-team'] = {type:'image/webp', b64:fs.readFileSync('assets/ropiroll-team.webp').toString('base64')};
 const careersBlock = `
 <style>
-#rr-careers{max-width:1160px;margin:55px auto;padding:clamp(22px,5vw,44px);border:2px solid #f36b43;border-radius:28px;background:#fff7ef;color:#241d1a;box-sizing:border-box;font-family:inherit}
+#rr-careers{max-width:1160px;margin:30px auto;padding:clamp(16px,3vw,28px);border:2px solid #f36b43;border-radius:28px;background:#fff7ef;color:#241d1a;box-sizing:border-box;font-family:inherit}
 #rr-careers .rr-eyebrow{color:#e75a2e;font-size:14px;font-weight:800;letter-spacing:.13em}
-#rr-careers h2{font-size:clamp(30px,5vw,48px);line-height:1.12;margin:24px 0;color:#241d1a}
+#rr-careers h2{font-size:clamp(26px,4vw,38px);line-height:1.12;margin:12px 0;color:#241d1a}
 #rr-careers h2 span{color:#e95e30}
-#rr-careers p{font-size:clamp(16px,2vw,21px);color:#655a55}
-#rr-careers .rr-terms{display:flex;gap:48px;flex-wrap:wrap;margin:28px 0}
-#rr-careers .rr-terms div{display:grid;gap:8px}
-#rr-careers .rr-terms small{font-size:16px;color:#796b63}
-#rr-careers .rr-terms strong{font-size:clamp(22px,3vw,30px);color:#a63d24}
-#rr-careers .rr-call{display:flex;align-items:center;justify-content:center;gap:12px;background:#fa582c;color:#fff;text-decoration:none;font-size:clamp(18px,3vw,25px);font-weight:800;border-radius:15px;padding:20px 12px;margin:20px 0 28px;box-shadow:0 10px 22px #e85b3030}
-#rr-careers img{display:block;width:100%;height:auto;border-radius:17px;aspect-ratio:1672/941;object-fit:cover}
-@media(max-width:650px){#rr-careers{margin:30px 15px;padding:22px 18px;border-radius:22px}#rr-careers .rr-terms{gap:25px}}
+#rr-careers p{font-size:clamp(14px,1.8vw,17px);color:#655a55;margin:12px 0}
+#rr-careers .rr-terms{display:flex;gap:28px;flex-wrap:wrap;margin:16px 0}
+#rr-careers .rr-terms div{display:grid;gap:5px}
+#rr-careers .rr-terms small{font-size:14px;color:#796b63}
+#rr-careers .rr-terms strong{font-size:clamp(19px,2.5vw,25px);color:#a63d24}
+#rr-careers .rr-call{display:flex;align-items:center;justify-content:center;gap:12px;background:#fa582c;color:#fff;text-decoration:none;font-size:clamp(16px,2.5vw,21px);font-weight:800;border-radius:14px;padding:13px 10px;margin:14px 0 18px;box-shadow:0 10px 22px #e85b3030}
+#rr-careers img{display:block;width:100%;height:auto;border-radius:14px;object-fit:contain;max-height:320px;object-position:center}
+@media(max-width:650px){#rr-careers{margin:20px 15px;padding:16px 16px;border-radius:20px}#rr-careers .rr-terms{gap:20px}#rr-careers img{max-height:none}}
 </style>
 <section id="rr-careers" aria-labelledby="rr-careers-title">
 <span class="rr-eyebrow">ПРИГЛАШАЕМ В КОМАНДУ</span>
 <h2 id="rr-careers-title">Требуются повара<br>в <span>РопиРолл</span></h2>
-<p>Готовь с нами — стань частью нашей команды!</p>
+
 <div class="rr-terms"><div><small>График</small><strong>2/2 или 3/3</strong></div><div><small>Оплата</small><strong>300 ₽/час</strong></div></div>
 <p>Осоргино, ул. Новая, 2/1</p>
-<p>По всем вопросам звоните:</p>
+
 <a class="rr-call" href="tel:+79874928568" aria-label="Позвонить по вакансии">☎ &nbsp;8 (987) 492-85-68</a>
 <img src="/api/careers-team.webp" alt="Команда поваров РопиРолл" loading="lazy" width="1672" height="941">
 </section>`;
