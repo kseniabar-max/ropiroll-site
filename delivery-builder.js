@@ -44,7 +44,32 @@ const careersBlock = `
 <a class="rr-call" href="tel:+79874928568" aria-label="Позвонить по вакансии">☎ &nbsp;8 (987) 492-85-68</a>
 <img src="/api/careers-team.webp" alt="Команда поваров РопиРолл" loading="lazy" width="1672" height="941">
 </section>`;
+const comboPromoBlock = `
+<style>
+#rr-combo-promo{background:radial-gradient(ellipse at 80% 0%,#56200d 0%,#18100c 48%,#100d0b 100%);color:#fff;padding:34px 16px 38px;margin:20px 0 28px;overflow:hidden}
+#rr-combo-promo .rr-combo-inner{max-width:1160px;margin:auto}
+#rr-combo-promo .rr-combo-eyebrow{display:inline-block;background:#f65a21;padding:8px 18px;border-radius:40px;font-size:14px;font-weight:800;letter-spacing:.06em}
+#rr-combo-promo h2{font-size:clamp(34px,6vw,68px);line-height:1.04;letter-spacing:-.035em;margin:16px 0 8px;color:#fff;font-weight:900}
+#rr-combo-promo h2 em{font-style:normal;color:#ff672b}
+#rr-combo-promo .rr-combo-sub{font-size:clamp(15px,2.2vw,20px);color:#f8e4d6;margin:0 0 20px}
+#rr-combo-promo .rr-combo-gallery{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:12px}
+#rr-combo-promo .rr-combo-card{display:block;overflow:hidden;border-radius:15px;background:#fff4e7;border:1px solid #e9824b;transition:transform .2s}
+#rr-combo-promo .rr-combo-card:hover{transform:translateY(-3px)}
+#rr-combo-promo .rr-combo-card img{display:block;width:100%;height:auto;aspect-ratio:1;object-fit:contain}
+#rr-combo-promo .rr-combo-bottom{display:flex;align-items:center;justify-content:space-between;gap:16px;margin-top:22px;flex-wrap:wrap}
+#rr-combo-promo .rr-combo-from{font-weight:900;font-size:clamp(22px,4vw,34px)}#rr-combo-promo .rr-combo-from strong{color:#ff682e}
+#rr-combo-promo .rr-combo-button{background:#f65a21;color:white;text-decoration:none;font-weight:800;padding:15px 25px;border-radius:13px}
+@media(max-width:650px){#rr-combo-promo{padding:27px 15px 30px;margin:12px 0 20px}#rr-combo-promo .rr-combo-gallery{display:flex;overflow-x:auto;scroll-snap-type:x mandatory;gap:12px;padding-bottom:12px;-webkit-overflow-scrolling:touch}#rr-combo-promo .rr-combo-card{flex:0 0 77%;scroll-snap-align:center}#rr-combo-promo .rr-combo-bottom{align-items:stretch}#rr-combo-promo .rr-combo-button{text-align:center;width:100%}}
+</style>
+<section id="rr-combo-promo" aria-labelledby="rr-combo-title"><div class="rr-combo-inner">
+<span class="rr-combo-eyebrow">НОВИНКИ В РОПИРОЛЛ</span>
+<h2 id="rr-combo-title">ВЫГОДНЫЕ <em>КОМБО</em></h2>
+<p class="rr-combo-sub">Любимые блюда вместе — ещё вкуснее и выгоднее!</p>
+<div class="rr-combo-gallery"><a href="#menu" data-cat="Комбо" class="rr-combo-card" aria-label="Комбо № 1"><img src="https://raw.githubusercontent.com/kseniabar-max/ropiroll-site/main/E70B47F5-09C1-40B7-B7C5-37E9CEBD286E.png" alt="Комбо № 1" loading="lazy"></a><a href="#menu" data-cat="Комбо" class="rr-combo-card" aria-label="Комбо № 2"><img src="https://raw.githubusercontent.com/kseniabar-max/ropiroll-site/main/FA9F6F4B-1AD4-48C0-949E-C119184DAC7F.png" alt="Комбо № 2" loading="lazy"></a><a href="#menu" data-cat="Комбо" class="rr-combo-card" aria-label="Комбо № 3"><img src="https://raw.githubusercontent.com/kseniabar-max/ropiroll-site/main/ABDB3E2E-28F7-443B-A342-0FFEA54795E7.png" alt="Комбо № 3" loading="lazy"></a><a href="#menu" data-cat="Комбо" class="rr-combo-card" aria-label="Комбо № 4"><img src="https://raw.githubusercontent.com/kseniabar-max/ropiroll-site/main/AA569255-8D07-44F2-B8A1-1B423E645BB4.png" alt="Комбо № 4" loading="lazy"></a><a href="#menu" data-cat="Комбо" class="rr-combo-card" aria-label="Комбо № 5"><img src="https://raw.githubusercontent.com/kseniabar-max/ropiroll-site/main/5C3F7ABC-4A43-4CF3-8DCC-E19D40D734ED.png" alt="Комбо № 5" loading="lazy"></a><a href="#menu" data-cat="Комбо" class="rr-combo-card" aria-label="Комбо № 6"><img src="https://raw.githubusercontent.com/kseniabar-max/ropiroll-site/main/3F10E051-2A3D-4AB0-9EB6-9D34BA86174F.png" alt="Комбо № 6" loading="lazy"></a><a href="#menu" data-cat="Комбо" class="rr-combo-card" aria-label="Комбо № 7"><img src="https://raw.githubusercontent.com/kseniabar-max/ropiroll-site/main/92843018-91B9-4540-80EC-4400241D896D.png" alt="Комбо № 7" loading="lazy"></a><a href="#menu" data-cat="Комбо" class="rr-combo-card" aria-label="Комбо № 8"><img src="https://raw.githubusercontent.com/kseniabar-max/ropiroll-site/main/5B91EE46-3AB7-4111-9867-0A3182B18E39.png" alt="Комбо № 8" loading="lazy"></a></div>
+<div class="rr-combo-bottom"><span class="rr-combo-from">8 комбо-наборов · от <strong>450 ₽</strong></span><a class="rr-combo-button" href="#menu" data-cat="Комбо">Выбрать комбо →</a></div>
+</div></section>`;
 assets.index.b64 = Buffer.from(fs.readFileSync('index-delivery.html', 'utf8')
+  .replace('<section id="categories"', comboPromoBlock + '<section id="categories"')
   .replace('</main>', careersBlock + '</main>')
   .replace(/\/(style\.css|app\.js)\?v=[^"']+/g, '/$1?v=' + assetVersion))
   .toString('base64');
