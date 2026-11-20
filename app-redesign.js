@@ -62,7 +62,9 @@ const photoKeys={'Пицца с лососем':'pizza-salmon','Пепперон
   "Картофельные дольки":{type:"sprite",index:2},
   "Наггетсы":{type:"sprite",index:3},
   "Наггетсы 420 г":{type:"sprite",index:3},
-  "Куриные крылышки":{type:"sprite",index:4}
+  "Куриные крылышки":{type:"sprite",index:4},
+  "Крылышки оригинальные":{type:"sprite",index:4},
+  "Крылышки острые":{type:"sprite",index:4}
 };
 function friedPhotoMarkup(p){
   if(p.cat!=="Фритюр")return "";
@@ -171,12 +173,20 @@ const rpSetBakedPrice={};
 for(const [n,price,count,wt,baked,parts] of rpApproved.sets){const p=rpFind(n);if(p){p.price=price;p.weight=count+' шт. · ~'+wt+' г';p.ingredients=parts.map(([title,g])=>title+' — ~'+g+' г').join('; ');if(baked!==null){rpSetBakedPrice[n]=baked;setPreparationVariants.set(n,{ingredients:p.ingredients});}else setPreparationVariants.delete(n);}}
 for(const type of ['shawarma','salads'])for(const [n,price,wt] of rpApproved[type]){const p=rpFind(n);if(p){p.price=price;p.weight='~'+wt+' г';}}
 for(const [n,wt,price] of [['Картофель фри','150 г',190],['Картофельные дольки','150 г',185],['Сырные палочки','6 шт.',250],['Луковые кольца','9 шт.',250],['Кольца кальмара 420 г','420 г',900],['Куриные крылышки','4 шт.',333],['Соус фирменный','50 мл',40]]){const p=rpFind(n);if(p){p.weight=wt;p.price=price;}}
+const rpWingsOriginal=rpFind('Куриные крылышки');
+if(rpWingsOriginal){
+  rpWingsOriginal.name='Крылышки оригинальные';
+  rpWingsOriginal.price=333;
+  rpWingsOriginal.weight='4 шт.';
+  const rpWingsSpicy={...rpWingsOriginal,id:Math.max(...menu.map(p=>p.id))+1,name:'Крылышки острые',price:333,weight:'4 шт.',hot:true};
+  menu.splice(menu.indexOf(rpWingsOriginal)+1,0,rpWingsSpicy);
+}
 for(const [n,second,options] of [['Креветки','Креветки 420 г',{'5 шт.':315,'420 г':999}],['Стрипсы','Стрипсы 420 г',{'5 шт.':250,'420 г':750}],['Наггетсы','Наггетсы 420 г',{'9 шт.':285,'420 г':700}]]){const p=rpFind(n);if(p){p.price=Object.values(options)[0];p.weight=Object.keys(options).join(' / ');p.prices=options;p.friedVariants=true;}const q=rpFind(second);if(q)menu.splice(menu.indexOf(q),1);}
 for(const [n,[price,weight]] of Object.entries({'Бамбуковые палочки':[15,'1 шт.'],'Имбирь':[50,'30 г'],'Васаби':[50,'20 г'],'Соевый соус':[50,'30 мл'],'Соус сырный':[40,'25 г'],'Соус барбекю':[40,'25 г']})){const p=rpFind(n);if(p){p.price=price;p.weight=weight;}}
 const rpGreek=rpFind('Греческий');if(rpGreek)menu.splice(menu.indexOf(rpGreek),1);
 for(const [n,ingredients] of Object.entries(rpApproved.recipes)){const p=rpFind(n);if(p)p.ingredients=ingredients;const v=classicVariants.find(x=>x.item.name===n);if(v)v.ingredients=ingredients;}
 const rpCrab=classicVariants.find(v=>v.key==='crab');if(rpCrab)rpCrab.label='Снежный краб';
-for(const n of ['Шаурма тайская','Куриные крылышки']){const p=rpFind(n);if(p)p.hot=true;}
+for(const n of ['Шаурма тайская','Крылышки острые']){const p=rpFind(n);if(p)p.hot=true;}
 const rpMenuStyle=document.createElement('style');
 rpMenuStyle.textContent='.rp-hot .pic,.rp-tempura .pic{position:relative}.rp-hot .pic::before,.rp-tempura .pic::before{position:absolute;z-index:5;left:11px;top:11px;background:#ff620a;color:white;font-size:12px;font-weight:900;padding:6px 10px;border-radius:5px}.rp-hot .pic::before{content:"HOT"}.rp-tempura .pic::before{content:"ТЕМПУРА";font-size:10px}.rp-fried-dual .priceRow{display:flex;flex-direction:column;align-items:stretch;gap:7px}.rp-fried-dual .pizza-size-prices{display:grid;gap:5px;width:100%}.rp-fried-dual .pizza-size-prices span{display:flex;justify-content:space-between;padding:6px 9px;background:#ff620a;color:#151515;border:2px solid #151515;border-radius:6px;font-weight:900}.rp-fried-dual .pizza-size-prices span b{color:#151515}.rp-fried-dual .priceRow .add{align-self:flex-end}#rp-bake-banner{background:#ff620a;color:#151515;border:3px solid #151515;border-radius:10px;font-weight:900;font-size:clamp(15px,2vw,20px);padding:13px 20px;margin:3px 0 18px;text-align:center}';
 document.head.append(rpMenuStyle);
