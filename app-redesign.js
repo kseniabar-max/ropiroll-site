@@ -69,7 +69,7 @@ const photoKeys={'Пицца с лососем':'pizza-salmon','Пепперон
 function friedPhotoMarkup(p){
   if(p.cat!=="Фритюр")return "";
   const photo=friedProductPhoto[p.name];if(!photo)return "";
-  if(photo.type==="single")return '<span class="food-photo food-photo-fried" role="img" aria-label="'+p.name+'"><img src="/api/fried-photo/'+photo.key+'" alt="" loading="lazy" decoding="async"></span>';
+  if(photo.type==="single")return '<span class="food-photo food-photo-fried" role="img" aria-label="'+p.name+'"><img src="'+(photo.key==='wings-new'?'/api/fried-wings-new.jpeg':'/api/fried-photo/'+photo.key)+'" alt="" loading="lazy" decoding="async"></span>';
   const column=photo.index%3,row=Math.floor(photo.index/3);
   return '<span class="food-photo food-photo-fried" role="img" aria-label="'+p.name+'"><span class="food-photo-fried-sprite" style="background-position:'+(column*50)+'% '+(row*100)+'%" aria-hidden="true"></span></span>';
 }
