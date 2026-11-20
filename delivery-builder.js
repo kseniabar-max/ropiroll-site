@@ -21,6 +21,7 @@ const assetVersion = createHash('sha256')
 const comboImageFiles = ["E70B47F5-09C1-40B7-B7C5-37E9CEBD286E.png","FA9F6F4B-1AD4-48C0-949E-C119184DAC7F.png","ABDB3E2E-28F7-443B-A342-0FFEA54795E7.png","AA569255-8D07-44F2-B8A1-1B423E645BB4.png","5C3F7ABC-4A43-4CF3-8DCC-E19D40D734ED.png","3F10E051-2A3D-4AB0-9EB6-9D34BA86174F.png","92843018-91B9-4540-80EC-4400241D896D.png","5B91EE46-3AB7-4111-9867-0A3182B18E39.png"];
 comboImageFiles.forEach((filename,index)=>{assets['combo-'+(index+1)]={type:'image/png',b64:fs.readFileSync(filename).toString('base64')};});
 assets['careers-team'] = {type:'image/webp', b64:fs.readFileSync('assets/ropiroll-team.webp').toString('base64')};
+assets['fried-wings-new'] = {type:'image/jpeg', b64:fs.readFileSync('IMG_1036.jpeg').toString('base64')};
 const careersBlock = `
 <style>
 #rr-careers{max-width:1160px;margin:30px auto;padding:clamp(16px,3vw,28px);border:2px solid #f36b43;border-radius:28px;background:#fff7ef;color:#241d1a;box-sizing:border-box;font-family:inherit}
@@ -115,6 +116,7 @@ if (!output.includes(anchor)) throw new Error('Не удалось добави�
 output = output.replace(anchor,
   'app.get("/api/combo-photo/:number", (req,res) => { const n=Number(req.params.number); if(!Number.isInteger(n)||n<1||n>8)return res.status(404).end(); return send(res,assets["combo-"+n],"no-cache"); });\n' +
   'app.get("/api/careers-team.webp", (_req,res) => send(res,assets["careers-team"],"no-cache"));\n' +
+  'app.get("/api/fried-wings-new.jpeg", (_req,res) => send(res,assets["fried-wings-new"],"no-cache"));\n' +
   'app.get("/api/catalog-photo/:key", (req,res) => { const asset=assets["catalog-"+String(req.params.key)]; if(!asset)return res.status(404).end();return send(res,asset,"no-cache"); });\n' +
   'app.get("/api/addon-photo/:key", (req,res) => { const key=String(req.params.key||""); if(!["wasabi","ginger","soy","chopsticks","cheese","bbq"].includes(key))return res.status(404).end(); return send(res,assets["addon-"+key],"no-cache"); });\n' +
   'app.get("/api/category-images", (_req,res) => send(res,assets["category-images"]));\n' +
