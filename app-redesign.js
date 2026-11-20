@@ -63,8 +63,8 @@ const photoKeys={'Пицца с лососем':'pizza-salmon','Пепперон
   "Наггетсы":{type:"sprite",index:3},
   "Наггетсы 420 г":{type:"sprite",index:3},
   "Куриные крылышки":{type:"sprite",index:4},
-  "Крылышки оригинальные":{type:"sprite",index:4},
-  "Крылышки острые":{type:"sprite",index:4}
+  "Крылышки оригинальные":{type:"single",key:"wings-new"},
+  "Крылышки острые":{type:"single",key:"wings-new"}
 };
 function friedPhotoMarkup(p){
   if(p.cat!=="Фритюр")return "";
